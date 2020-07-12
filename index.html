@@ -28,14 +28,18 @@
 	.pb8-m { padding-bottom: 24rem; }
 	.pb8-ns { padding-bottom: 24rem; }
 </style>
+<script>
+	function resize(elem, percent) { 
+	elem.style.fontSize = percent; }
+</script>
 
 </head>
 
 
 <header>
 <nav class="bg-near-white dt pt2 pt3-l pb5 pb6-l pb6-m w-100 ph1 pa0">
-	<div class="fl dtc w-50 tl">
-		<a class="link black f4 f3-l f3-m fw5 dib mh2 tl mh1-m hover-white" href="/index.html" title="Multidisciplinary visual designer">Hadass Sternberg</a>
+	<div class="fl dtc w-50 tl" onmouseover="resize(this, '125%')" onmouseout="resize(this, '100%')" >
+		<a class="link black f4 f3-l f3-m fw5 dib mh2 tl mh1-m" href="/index.html" title="Multidisciplinary visual designer">Hadass Sternberg</a>
 	</div>
 	<div class="fl dtc w-50 tr tl-l tl-m p12">
 		<a class="link black f4 f3-l f3-m fw5 dib mh2 hover-white" href="/about.html" title="Me">About</a>
