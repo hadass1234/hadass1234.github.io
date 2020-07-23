@@ -45,10 +45,12 @@
 </header>
 
 <body>
+	<!--CSS Spinner-->
+	<div class="spinner-wrapper">
+	<div class="spinner"></div>
+	</div>
 
 <!-- Loader -->
-
-
 <main class="bg-near-white ph1 pa0">
 	  <div class="cf center">
         <div class="fl w-100 w-50-l pa2">
@@ -117,7 +119,17 @@
 </main>
 -->
 <script src="/javascript.js"></script>
-
+<script>
+$(document).ready(function() {
+//Preloader
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+</script>
 
 </body>
 
