@@ -15,7 +15,6 @@
 
 </head>
 
-
 <header>
 <div class="b">
 <nav class="bg-near-white dt pt2 pt3-l pb5 pb6-l pb6-m w-100 ph1 pa0">
@@ -30,6 +29,11 @@
 </header>
 
 <body>
+
+	<div class="spinner-wrapper">
+	<div class="spinner"></div>
+	</div>
+
 <main>
 <main class="bg-near-white ph1 pa0 pb2">
 	  <div class="cf center">
@@ -339,6 +343,17 @@
 </main>
 
 <script src="/javascript.js"></script>
+<script>
+$(document).ready(function() {
+//Preloader
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+</script>
 </body>
 
 <footer>
