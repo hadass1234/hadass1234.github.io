@@ -33,7 +33,7 @@
 	.spinner {
 		width: 40px;
 		height: 40px;
-		background-color: #f4f4f4;
+		background-color: #333;
 
 		position: absolute;
 		top: 48%;
@@ -66,6 +66,6 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: #ff6347;
+		background-color: #f4f4f4;
 		z-index: 999999;
 		}
