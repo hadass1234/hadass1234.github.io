@@ -34,7 +34,7 @@
     content:'Hadass Sternberg';
 	}
 	.label:hover:after{
-    content:'  Communication designer'; font-size: f4 f4-l f4-m;
+    content:'  <sup>Communication designer</sup>';
 	}
 
 	a {
