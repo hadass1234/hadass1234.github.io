@@ -19,20 +19,32 @@
 	.pb8-m { padding-bottom: 24rem; }
 	.pb8-ns { padding-bottom: 24rem; }
 
+	<!-- index nax area -->
 	div.b { height: 200px;}
 	div.b2 { height: 100px;}
 	div.b3 { height: 80px;}
 	
+	<!-- italic/different font upon hover -->
 	a.ex4:hover, a.ex4:active {font-family: monospace;}
 	a.ex5:hover, a.ex5:active {text-decoration: underline;}
 	a.ex6:hover, a.ex6:active {font-style: italic;}
 	
-	
+	<!-- different text upon hover -->
+	.label:after{
+    content:'text I want to change';
+	}
+	.label:hover:after{
+    content:'changed text';
+	}
+
 	a {
 		outline: 0;
 		outline: none;
 	}
-
+	
+	
+	<!-- enlarge font upon hover -->
+	
 	@keyframes ldio-lt6rgcsawgm {
 		0% { transform: translate(-50%,-50%) rotate(0deg); }
 		100% { transform: translate(-50%,-50%) rotate(360deg); }
