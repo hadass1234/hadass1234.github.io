@@ -24,6 +24,9 @@
 	div.b3 { height: 80px;}
 	
 	a.ex4:hover, a.ex4:active {font-family: monospace;}
+	a.ex5:hover, a.ex5:active {text-decoration: underline;}
+	a.ex6:hover, a.ex6:active {font-style: italic;}
+	
 	
 	a {
 		outline: 0;
