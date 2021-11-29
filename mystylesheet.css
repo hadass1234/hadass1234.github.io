@@ -31,7 +31,7 @@
 	
 	<!-- different text upon hover -->
 	.label:after{
-    content:'text I want to change';
+    content:'Hadass Sternberg';
 	}
 	.label:hover:after{
     content:'changed text';
