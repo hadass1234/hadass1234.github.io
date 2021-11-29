@@ -34,7 +34,8 @@
     content:'Hadass Sternberg';
 	}
 	.label:hover:after{
-    content:'changed text';
+    content:'Multidisciplinary visual designer';
+	font-size: f4;
 	}
 
 	a {
