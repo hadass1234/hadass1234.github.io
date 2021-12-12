@@ -1,0 +1,27 @@
+{
+  "name": "hadass1234.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2",
+    "handlebars": "^4.7.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadass1234/hadass1234.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadass1234/hadass1234.github.io/issues"
+  },
+  "homepage": "https://github.com/hadass1234/hadass1234.github.io#readme"
+}
