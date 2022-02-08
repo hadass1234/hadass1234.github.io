@@ -54,6 +54,11 @@
 	  margin-top: 4rem;
 	}
 
+	.icon {
+	  width: 2em;
+	  height: 2rem;
+	}
+
 	<!-- enlarge font upon hover -->
 
 	@keyframes ldio-lt6rgcsawgm {
