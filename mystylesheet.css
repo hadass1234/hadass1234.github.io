@@ -42,6 +42,17 @@
 		outline: none;
 	}
 
+	.navbar {
+	  overflow: hidden;
+	  position: fixed;
+	  top: 0;
+	  width: 100%;
+	}
+
+	.nav-main {
+	  padding-top: 16px;
+	  margin-top: 30px;
+	}
 
 	<!-- enlarge font upon hover -->
 
