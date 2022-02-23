@@ -2,13 +2,14 @@
 
 @import url(http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900);
 @import url(http://fonts.googleapis.com/css?family=Questrial:400);
+@import url(http://fonts.googleapis.com/css?family=DM+Sans:100,200,300,400,500,600,700,800,900);
 
 	body{
-		font-family: 'Questrial', Arial, sans-serif;
+		font-family: 'DM Sans', Arial, sans-serif;
 	}
 
 		h1, h2, h3, h4, h5, h6{
-		font-family: 'Questrial', Arial, sans-serif;
+		font-family: 'DM Sans', Arial, sans-serif;
 	}
 	.garamond { font-family: garamond, serif; }
 	.avenir { font-family: 'avenir next', avenir, sans-serif; }
