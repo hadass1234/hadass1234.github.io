@@ -8974,81 +8974,81 @@ code {
     }
 
     .ttu-l {
-        text-transform: uppercase
+        text-transform: uppercase !important;
     }
 
     .ttn-l {
-        text-transform: none
+        text-transform: none !important;
     }
 
     .f-6-l,
     .f-headline-l {
-        font-size: 6rem
+        font-size: 6rem !important;
     }
 
     .f-5-l,
     .f-subheadline-l {
-        font-size: 5rem
+        font-size: 5rem !important;
     }
 
     .f1-l {
-        font-size: 3rem
+        font-size: 3rem !important;
     }
 
     .f2-l {
-        font-size: 2.25rem
+        font-size: 2.25rem !important;
     }
 
     .f3-l {
-        font-size: 1.5rem
+        font-size: 1.5rem !important;
     }
 
     .f4-l {
-        font-size: 1.25rem
+        font-size: 1.25rem !important;
     }
 
     .f5-l {
-        font-size: 1rem
+        font-size: 1rem !important;
     }
 
     .f6-l {
-        font-size: .875rem
+        font-size: .875rem !important;
     }
 
     .f7-l {
-        font-size: .75rem
+        font-size: .75rem !important;
     }
 
     .measure-l {
-        max-width: 30em
+        max-width: 30em !important;
     }
 
     .measure-wide-l {
-        max-width: 34em
+        max-width: 34em !important;
     }
 
     .measure-narrow-l {
-        max-width: 20em
+        max-width: 20em !important;
     }
 
     .indent-l {
-        text-indent: 1em;
-        margin-top: 0;
-        margin-bottom: 0
+        text-indent: 1em !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
     }
 
     .small-caps-l {
-        font-variant: small-caps
+        font-variant: small-caps !important;
     }
 
     .truncate-l {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
 
     .center-l {
-        margin-left: auto
+        margin-left: auto !important;
     }
 
     .center-l,
