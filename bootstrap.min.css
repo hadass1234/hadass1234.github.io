@@ -4291,7 +4291,7 @@ fieldset:disabled .btn {
 .tab-content>.active {
     display: block
 }
-
+/* 
 .navbar {
     --bs-navbar-padding-x: 0;
     --bs-navbar-padding-y: 0.5rem;
@@ -4320,6 +4320,7 @@ fieldset:disabled .btn {
     justify-content: space-between;
     padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x)
 }
+ */
 
 .navbar>.container,
 .navbar>.container-fluid,
