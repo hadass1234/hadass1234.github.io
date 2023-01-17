@@ -141,6 +141,7 @@
   
   		/* Style the buttons */
   		.btn {
+			border: none;
 			cursor: pointer;
 			background-color: transparent;
   		}
