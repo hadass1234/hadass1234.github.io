@@ -1,6 +1,8 @@
 function resize(elem, percent) { 
 	elem.style.fontSize = percent; }
 
+
+	// Filtering - Homepage
 	filterSelection("all")
 	function filterSelection(c) {
 	  var x, i;
@@ -43,3 +45,20 @@ function resize(elem, percent) {
 		this.className += " active";
 	  });
 	}
+
+
+
+	// Tabs - case study
+	function openCityC(evt, cityName) {
+		var i, tabcontentC, tablinksC;
+		tabcontentC = document.getElementsByClassName("tabcontentC");
+		for (i = 0; i < tabcontentC.length; i++) {
+		  tabcontentC[i].style.display = "none";
+		}
+		tablinksC = document.getElementsByClassName("tablinksC");
+		for (i = 0; i < tablinksC.length; i++) {
+		  tablinksC[i].className = tablinksC[i].className.replace(" active", "");
+		}
+		document.getElementById(cityName).style.display = "block";
+		evt.currentTarget.className += " active";
+	  }
