@@ -147,6 +147,7 @@
 			  
 			  /* Content */
 			  .content {
+				background-color: transparent;
 			  }
 			  
 			  /* The "show" class is added to the filtered elements */
