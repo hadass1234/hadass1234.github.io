@@ -126,3 +126,46 @@
 			opacity: .8; transition: opacity .15s ease-in; }
 		.dim-a:active { 
 			opacity: .9; transition: opacity .15s ease-out; }
+
+
+		/* Style filter */
+
+		/* Center website */
+		.row {
+			margin: 10px -16px;}
+			  
+		/* Add padding BETWEEN each column */
+			  .row,
+			  .row > .column {
+				padding: 8px;
+			  }
+			  
+			  /* Create three equal columns that floats next to each other */
+			  .column {
+				display: none; /* Hide all elements by default */
+			  }
+			  
+			  /* Content */
+			  .content {
+			  }
+			  
+			  /* The "show" class is added to the filtered elements */
+			  .show {
+				display: block;
+			  }
+			  
+			  /* Style the buttons */
+			  .br-pill-a {
+				border: none;
+				outline: none;
+				background-color: white;
+				cursor: pointer;
+			  }
+			  
+			  .br-pill-a:hover {
+				background-color: #ddd;
+			  }
+			  
+			  .br-pill-a.active {
+				background-color: #666;
+			  }

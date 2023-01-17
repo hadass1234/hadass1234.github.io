@@ -46,16 +46,23 @@
 <!-- Loader -->
 <main class="cf pb3 pb4-m pb5-l ph3 ph4-m ph6-l pt3 mw10 center">
   <div class="fn w-100 w-90-l">
-    <h1 class="f2 f1-l lh-title mt0 mb4 .mb4-l .mb4-m mb5-ns">Hi!<br>I’m Hadass, a Product Designer & Art Director, specializing in UX Design, Visual Concept and Digital Experience.</h1>
+    <h1 class="f3 f2-l lh-title mt0 mb4 .mb4-l .mb4-m mb5-ns">Hi!<br>I’m Hadass, a Product Designer & Art Director, specializing in UX Design, Visual Concept and Digital Experience.</h1>
   </div>
 </main>
 
 <main class="ph1 pa0">
 	  <div class="cf center">
         <div class="fl w-100 phs pr5-l pr4-m pa2">
-            <p class="dt black f4 f3-l f3-m fw4 mt0 mb2 lh-title">Selected Work</p>
+            <p class="dt black f4 f3-l f3-m fw4 mt0 mb2 lh-title">Selected Work</p><br>
+            <!-- Filter -->
+            <div id="myBtnContainer">
+                <button class="br-pill-a active" onclick="filterSelection('all')"> All</button>
+                <button class="br-pill-a" onclick="filterSelection('ux-ui')"> UX/UI</button>
+                <button class="br-pill-a" onclick="filterSelection('art-direction')"> ART DIRECTION</button>
+                <button class="br-pill-a" onclick="filterSelection('graphic-design')"> GRAPHIC DESIGN</button>
+            </div>
         </div>
-			<div class="fl w-100 w-50-l pa2 pb4 dim-a">
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a ux-ui">
 				<a class="dt" href="/project-spotify">
 					<img class="db w-100 mw10 br4" src="/img/thumb-spo3.gif">
 				</a>
@@ -63,7 +70,7 @@
                     <a class="link black f4 f3-l f3-m ex6 tl  mv0" href="/project-spotify">Spotify: National election campaign</a>
                 </div>
 			</div>
-			<div class="fl w-100 w-50-l pa2 pb4 dim-a">
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a art-direction">
 				<a class="dt" href="/project-oww" >
 					<img class="db w-100 mw10 br4" src="/img/thumb-oww.jpg">
 				</a>
