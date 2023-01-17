@@ -196,7 +196,7 @@
 		  }
 		  
 		  /* Create an active/current tablink class */
-		  .tabx button.active {
+		  .tab button.active {
 			background-color: black;
 			color: white
 		  }
