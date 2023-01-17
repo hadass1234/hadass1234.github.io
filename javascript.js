@@ -1,8 +1,7 @@
 function resize(elem, percent) { 
 	elem.style.fontSize = percent; }
 
-
-filterSelection("all")
+	filterSelection("all")
 	function filterSelection(c) {
 	  var x, i;
 	  x = document.getElementsByClassName("columnf");
