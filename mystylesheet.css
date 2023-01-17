@@ -150,5 +150,6 @@
   		}
   
   		.btn.active {
-			background-color: #ff725c	;
+			background-color: black	;
+			color: white
   		}
