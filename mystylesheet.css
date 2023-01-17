@@ -122,7 +122,7 @@
 
 		.dim-a { 
 			opacity: 1; transition: opacity .15s ease-in; }
-		.dim-a:hover1, .dim-a:focus { 
+		.dim-a:hover, .dim-a:focus { 
 			opacity: .8; transition: opacity .15s ease-in; }
 		.dim-a:active { 
 			opacity: .9; transition: opacity .15s ease-out; }
