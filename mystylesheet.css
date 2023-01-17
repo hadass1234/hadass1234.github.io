@@ -24,17 +24,17 @@
 	.pl9-m { padding-left: 6rem; }
 	.pl9-ns { padding-left: 6rem; }
 
-	<!-- index nax area -->
+	/* index nax area */
 	div.b { height: 200px;}
 	div.b2 { height: 100px;}
 	div.b3 { height: 80px;}
 
-	<!-- italic/different font upon hover -->
+	/* italic/different font upon hover */
 	a.ex4:hover, a.ex4:active {font-family: monospace;}
 	a.ex5:hover, a.ex5:active {text-decoration: underline;}
 	a.ex6:hover, a.ex6:active {font-style: italic;}
 
-	<!-- different text upon hover -->
+	/* different text upon hover */
 	.label:after{
     content:'Hadass Sternberg';
 	}
@@ -64,8 +64,7 @@
 		padding-bottom: 3px;
 	}
 
-	<!-- enlarge font upon hover -->
-
+	/* enlarge font upon hover */
 	@keyframes ldio-lt6rgcsawgm {
 		0% { transform: translate(-50%,-50%) rotate(0deg); }
 		100% { transform: translate(-50%,-50%) rotate(360deg); }
@@ -129,44 +128,30 @@
 
 
 		/* Style filter */
-
-		/* Center website */
-		.row {
-			margin: 10px -16px;}
-			  
-		/* Add padding BETWEEN each column */
-			  .row,
-			  .row > .column {
-				padding: 8px;
-			  }
-			  
-			  /* Create three equal columns that floats next to each other */
-			  .column {
-				display: none; /* Hide all elements by default */
-			  }
-			  
-			  /* Content */
-			  .content {
-				background-color: transparent;
-			  }
-			  
-			  /* The "show" class is added to the filtered elements */
-			  .show {
-				display: block;
-			  }
-			  
-			  /* Style the buttons */
-			  .br-pill-a {
-				border: none;
-				outline: none;
-				background-color: white;
-				cursor: pointer;
-			  }
-			  
-			  .br-pill-a:hover {
-				background-color: #ddd;
-			  }
-			  
-			  .br-pill-a.active {
-				background-color: #666;
-			  }
+		
+		/* Create three equal columns that floats next to each other */
+		.columnf {
+			display: none; /* Hide all elements by default */
+  		}
+  
+  		/* The "show" class is added to the filtered elements */
+  		.show {
+			display: block;
+  		}
+  
+  		/* Style the buttons */
+  		.btn {
+			border: none;
+			outline: none;
+			background-color: white;
+			cursor: pointer;
+  		}
+  
+  		.btn:hover {
+			background-color: #ddd;
+  		}
+  
+  		.btn.active {
+			background-color: #666;
+			color: white;
+  		}
