@@ -151,7 +151,7 @@
   		}
   
   		.btn.active {
-			background-color: black	;
+			background-color: black;
 			color: white
   		}
 
@@ -176,27 +176,27 @@
 
 
 		/* tabs */
+
 		 /* Style the tab */
-		 .tab {
+		 .taba {
 			overflow: hidden;
 		  }
 		  
 		  /* Style the buttons inside the tab */
-		  .tab button {
-			background-color: inherit;
-			float: left;
+		  .taba button {
+			background-color: transparent;
 			border: none;
 			outline: none;
 			cursor: pointer;
 		  }
 		  
 		  /* Change background color of buttons on hover */
-		  .tab button:hover {
+		  .taba button:hover {
 			background-color: #ddd;
 		  }
 		  
 		  /* Create an active/current tablink class */
-		  .tab button.active {
+		  .taba button.active {
 			background-color: black;
 			color: white
 		  }
@@ -204,5 +204,4 @@
 		  /* Style the tab content */
 		  .tabcontent {
 			display: none;
-			border-top: none;
 		  }
