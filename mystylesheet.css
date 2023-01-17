@@ -154,3 +154,22 @@
 			background-color: black	;
 			color: white
   		}
+
+
+		/* HL Animation */
+
+		  .cssanimation, .cssanimation span {
+			animation-duration: 1s;
+			animation-fill-mode: both;
+		}
+		
+		.cssanimation span { display: inline-block }
+		
+		.fadeInBottom { animation-name: fadeInBottom }
+		@keyframes fadeInBottom {
+			from {
+				opacity: 0;
+				transform: translateY(100%);
+			}
+			to { opacity: 1 }
+		}
