@@ -141,9 +141,6 @@
   
   		/* Style the buttons */
   		.btn {
-			border: none;
-			outline: none;
-			background-color: white;
 			cursor: pointer;
   		}
   
@@ -152,6 +149,5 @@
   		}
   
   		.btn.active {
-			background-color: #666;
-			color: white;
+			background-color: #ff725c	;
   		}
