@@ -120,9 +120,9 @@
 		.hover-bg-brown {
 		background-color: #964B00; }
 
-		.dim { 
+		.dim-a { 
 			opacity: 1; transition: opacity .15s ease-in; }
-		.dim:hover, .dim:focus { 
-			opacity: .8; transition: opacity .15s ease-in; !important}
-		.dim:active { 
-			opacity: .9; transition: opacity .15s ease-out; !important}
+		.dim-a:hover, .dim-a:focus { 
+			opacity: .8; transition: opacity .15s ease-in; }
+		.dim-a:active { 
+			opacity: .9; transition: opacity .15s ease-out; }
