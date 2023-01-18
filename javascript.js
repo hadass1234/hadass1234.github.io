@@ -47,7 +47,6 @@ function resize(elem, percent) {
 	}
 
 
-
 	// Tabs - case study
 	  function openCityC(evt, cityName) {
 		var i, tabcontentC, tablinksC;
