@@ -11,6 +11,18 @@
 		h1, h2, h3, h4, h5, h6{
 		font-family: 'DM Sans', Arial, sans-serif !important;
 	}
+
+	/* 
+	.h1{
+		font-family: 'DM Sans', Arial, sans-serif !important;
+	}
+
+	.h2{
+		font-family: 'DM Sans', Arial, sans-serif !important;
+	}Headlines */
+
+
+
 	.garamond { font-family: garamond, serif; }
 	.avenir { font-family: 'avenir next', avenir, sans-serif; }
 	.helvetica { font-family: 'helvetica neue', helvetica, sans-serif; }
@@ -206,3 +218,5 @@
 			display: none;
 			border: none;
 		  }
+
+		  
