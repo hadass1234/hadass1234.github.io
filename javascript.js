@@ -49,7 +49,7 @@ function resize(elem, percent) {
 
 
 	// Tabs - case study
-	function openCityC(evt, cityName) {
+	  function openCityC(evt, cityName) {
 		var i, tabcontentC, tablinksC;
 		tabcontentC = document.getElementsByClassName("tabcontentC");
 		for (i = 0; i < tabcontentC.length; i++) {
