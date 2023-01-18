@@ -218,5 +218,8 @@
 			display: none;
 			border: none;
 		  }
-
+		
+		.display {
+			display: block;
+		}
 		  
