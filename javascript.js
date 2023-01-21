@@ -62,3 +62,7 @@ function resize(elem, percent) {
       document.getElementById(cityName).style.display = "block";
       evt.currentTarget.className += " active";
     }
+
+
+	// Video
+	document.getElementById('vid').play();
