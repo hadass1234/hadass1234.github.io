@@ -11,8 +11,9 @@
 <link rel="stylesheet" type="text/css" href="/mystylesheet.css">
 <link rel="stylesheet" type="text/css" href="/mystylesheet.css">
 <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" !important/> 
-<link rel="icon" href="/img/smily.png" type="image/gif" sizes="16x16">
+<link rel="icon" href="/img/circle.png" type="image/gif" sizes="16x16">
 <link href='https://fonts.googleapis.com/css?family=DM+Sans' rel='stylesheet'>
+<link href="https://fonts.cdnfonts.com/css/dm-sans" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet'>
 </head>
 
@@ -44,79 +45,145 @@
 
 <div class="nav-main mh2">
 <!-- Loader -->
-<main class="cf pb3 pb4-m pb5-l ph3 ph4-m ph6-l pt3 mw10 center">
+<main class="cf pb4 pb5-m pb6-l ph3 ph4-m ph6-l pt4 mw10 center">
   <div class="fn w-100 w-90-l">
-    <h1 class="f3 f2-l lh-title mt0 mb4 mb5-ns">Hi!<br>I’m Hadass, a Designer & Art Director, specializing in Graphic Design, Visual Concept and Digital Experience.</h1>
+    <h1 class="f3 f2-l lh-title mt3 mb5 mr0 mr0-l mr5-m fw5 tracked-tight cssanimation sequence fadeInBottom">Hi!<br>I’m Hadass, a Product Designer & Art Director, specializing in UX Design and Visual Concept for Digital products.</h1>
   </div>
 </main>
 
 <main class="ph1 pa0">
 	  <div class="cf center">
-			<div class="fl w-100 w-50-l pa2 pb4">
+        <div class="fl w-100 phs pb3 pr5-l pr4-m pa2">
+            <!-- SELECTED WORK HL
+            <p class="dt black f4 f3-l f3-m fw4 mt0 mb2 lh-title">Selected Work</p> -->
+            <!-- Filter -->
+            <div id="myBtnContainer">
+                <button class="btn br-pill ph3 pv2 mb1 mr1 active" onclick="filterSelection('all')"> All</button>
+                <button class="btn br-pill ph3 pv2 mb1 mr1" onclick="filterSelection('uxA')"> UX/UI</button>
+                <button class="btn br-pill ph3 pv2 mb1 mr1" onclick="filterSelection('artA')"> ART DIRECTION</button>
+                <button class="btn br-pill ph3 pv2 mb1 mr1" onclick="filterSelection('graphicA')"> GRAPHIC DESIGN</button>
+            </div>
+        </div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf uxA artA graphicA">
+				<a class="dt" href="">
+					<img class="db w-100 mw10 br4" src="/img/thumb-toshi.jpg">
+				</a>
+				<div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl  mv0" href=""><span style="color:#777; font-size: 1rem;">Coming soon: </span>toshi: Investment app</a>
+                </div>
+			</div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf uxA artA">
+				<a class="dt" href="" >
+					<video autoplay loop muted playsinline class="db w-100 mw10 br4" width="fit-content" block-size="fit-content" height="fit-content" name="Cum to Sleep" id="vid" autoplay="autoplay">
+						<source src="/img/thumb-cts-mac2.mov" type="video/mp4">
+					  </video>
+				</a>
+                <div class="pt2 pb2">
+				    <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href=""><span style="color:#777; font-size: 1rem;">Coming soon: </span>Cum to Sleep: Wellness app</a>
+                </div>
+			</div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf uxA artA">
+				<a class="dt" href="">
+					<img class="db w-100 mw10 br4" src="/img/thumb-susanne-1.gif">
+				</a>
+				<div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl  mv0" href=""><span style="color:#777; font-size: 1rem;">Coming soon: </span>Susanne Jung: website</a>
+                </div>
+			</div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf uxA">
+				<a class="dt" href="">
+					<img class="db w-100 mw10 br4" src="/img/thumb-filmgalerie-1.jpg">
+				</a>
+				<div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl  mv0" href=""><span style="color:#777; font-size: 1rem;">Coming soon: </span>Filmgalerie Berlin: e-commerce DVD rental</a>
+                </div>
+			</div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf graphicA">
 				<a class="dt" href="/project-spotify">
-					<img class="db w-100 mw10" src="/img/thumb-spo3.gif">
+					<img class="db w-100 mw10 br4" src="/img/thumb-spo3.gif">
 				</a>
-				<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-spotify">Spotify: National election campaign</a>
+				<div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl  mv0" href="/project-spotify">Spotify: National election campaign</a>
+                </div>
 			</div>
-			<div class="fl w-100 w-50-l pa2 pb4">
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf artA graphicA">
 				<a class="dt" href="/project-oww" >
-					<img class="db w-100 mw10" src="/img/thumb-oww.jpg">
+					<img class="db w-100 mw10 br4" src="/img/thumb-oww.jpg">
 				</a>
-				<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-oww" >GOOD XSAMPLE: charity market</a>
+                <div class="pt2 pb2">
+				    <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-oww" >One Warm Winter x Highsnobiety: GOOD XSAMPLE 2.0</a>
+                </div>
 			</div>
-			<div class="fl w-100 w-50-l pa2 pb4">
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf artA graphicA">
 				<a class="dt" href="/project-xyz">
-					<img class="db w-100 mw10" src="/img/thumb-xyz-3.jpg">
+					<img class="db w-100 mw10 br4" src="/img/thumb-xyz-3.jpg">
 				</a>
-				<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-xyz">XYZ: HTK exhibition poster</a>
+				<div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-xyz">HTK Berlin: Final exhibition poster</a>
+                </div>
 			</div>
-			<div class="fl w-100 w-50-l pa2 pb4">
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf uxA artA">
 				<a class="dt" href="/project-stephenwilks" >
-					<img class="db w-100 mw10" src="/img/thumb-sw5.gif">
+					<img class="db w-100 mw10 br4" src="/img/thumb-sw5.gif">
 				</a>
-				<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-stephenwilks" >Stephen Wilks: website</a>
+				<div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-stephenwilks" >Stephen Wilks: website</a>
+                </div>
 			</div>
-			<div class="fl w-100 w-50-l pa2 pb4">
-				<a class="dt" href="/project-myposterboom">
-					<img class="db w-100 mw10" src="/img/thumb-myposterboom-motion-4.gif" >
-				</a>
-				<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-myposterboom" >#myposterboom: Poster collection</a>
-			</div>
-			<div class="fl w-100 w-50-l pa2 pb4">
-				<a class="dt" href="/project-greek-theater" >
-					<img class="db w-100 mw10" src="/img/thumb-theater-1.jpg">
-				</a>
-				<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-greek-theater" >Greek Theater: Identity design</a>
-			</div>
-
-			<div class="fl w-100 w-50-l pa2 pb4">
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf uxA artA graphicA">
 				<a class="dt" href="/project-judaikit">
-					<img class="db w-100 mw10" src="/img/thumb-judaikit-motion.gif"></a>
-					<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-judaikit">Judaikit: Jewish ceremonial kits</a>
-      </div>
-			<div class="fl w-100 w-50-l pa2 pb4">
+					<img class="db w-100 mw10 br4" src="/img/thumb-judaikit-motion.gif"></a>
+                <div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-judaikit">Judaikit: Jewish ceremonial kits</a>
+                </div>
+            </div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf artA graphicA">
 				<a class="dt" href="/project-brlo">
-					<img class="db w-100 mw10" src="/img/thumb-brlo.jpg" >
+					<img class="db w-100 mw10 br4" src="/img/thumb-brlo.jpg" >
 				</a>
-					<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-brlo">BRLO: OOH campaign</a>
-      </div>
-
-			<div class="fl w-100 w-50-l pa2 pb4">
+			<div class="pt2 pb2">
+                <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-brlo">BRLO: OOH campaign</a>
+            </div>
+            </div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf artA graphicA">
+				<a class="dt" href="/project-myposterboom">
+					<img class="db w-100 mw10 br4" src="/img/thumb-myposterboom-motion-4.gif" >
+				</a>
+				<div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-myposterboom" >#myposterboom: Poster collection</a>
+                </div>
+			</div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf artA graphicA">
+				<a class="dt" href="/project-brutal-beauty" >
+					<img class="db w-100 mw10 br4" src="/img/thumb-bb2.gif">
+				</a>
+				<div class="pt2 pb2">
+                    <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-brutal-beauty" >Brutal Beauty: Photography</a>
+                </div>
+			</div>
+			<!-- Filter 
+            <div class="fl w-100 w-50-l pa2 pb4 dim-a columnf uxA artA graphicA">
 				<a class="dt" href="/project-jumper92">
-					<img class="db w-100 mw10" src="/img/thumb-jumper92-10.jpg"></a>
-					<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-jumper92">JUMPER 92: Vintage store</a>
-      </div>
-			<div class="fl w-100 w-50-l pa2 pb4">
+					<img class="db w-100 mw10 br4" src="/img/thumb-jumper92-10.jpg"></a>
+            <div class="pt2 pb2">
+                 <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-jumper92">JUMPER 92: Vintage store</a>
+             </div>
+            </div>
+			<div class="fl w-100 w-50-l pa2 pb4 dim-a columnf artA graphicA">
 				<a class="dt" href="/project-futura">
-					<img class="db w-100 mw10" src="/img/thumb-futura-motion-2.gif" >
+					<img class="db w-100 mw10 br4" src="/img/thumb-futura-motion-2.gif" >
 				</a>
-					<a class="link black f4 f3-l f3-m ex6 tl pt1 pb3 mv0" href="/project-futura">Futura: Typeface booklet</a>
-      </div>
+            <div class="pt2 pb2">
+                <a class="link black f4 f3-l f3-m ex6 tl pt2 pb3 mv0" href="/project-futura">Futura: Typeface booklet</a>
+            </div>-->
+        </div>
 		</div>
 </main>
 </div>
 <script src="/javascript.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
+
+</script>
 </body>
 
 <footer class="bg-near-white w-100 mv2 ph3 pv2 mt2 pa0">
@@ -126,7 +193,7 @@
 				<a class="link black dib mh1 ex6 f3 fw4 dib pb0" target="_blank" href=""></a>&nbsp;
 			</div>
 			<div class="fl dtc w-30 pb0 tr tr-l tr-m lh-copy">
-				<a class="link black dib tr mh1 f3 fw4 dib pb0" title="Copyright">&copy; 2022</a>
+				<a class="link black dib tr mh1 f3 fw4 dib pb0" title="Copyright">&copy; 2023</a>
 			</div>
 		</nav>
 	</div>
