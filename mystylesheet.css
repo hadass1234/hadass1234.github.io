@@ -78,6 +78,11 @@
 		padding-bottom: 3px;
 	}
 
+	.tracked-tighter {
+		letter-spacing: -.03em;
+	}
+
+
 	/* enlarge font upon hover */
 	@keyframes ldio-lt6rgcsawgm {
 		0% { transform: translate(-50%,-50%) rotate(0deg); }
