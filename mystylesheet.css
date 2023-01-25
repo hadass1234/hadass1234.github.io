@@ -230,3 +230,24 @@
 			display: block;
 		}
 		  
+ 		/* collapsible */
+		.collapsible {
+			background-color: #eee;
+			color: black;
+			cursor: pointer;
+			width: 100%;
+			border: none;
+			outline: none;
+		  }
+		  
+		  .active, .collapsible:hover {
+			background-color: #ccc;
+		  }
+		  
+		  .contentD {
+			padding: 0 18px;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+			background-color: #f4f4f4;
+		  }
