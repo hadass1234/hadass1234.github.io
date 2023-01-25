@@ -66,3 +66,20 @@ function resize(elem, percent) {
 
 	// Video
 	document.getElementById('vid').play();
+
+
+	// Collapsible
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+
+	for (i = 0; i < coll.length; i++) {
+  	coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var contentD = this.nextElementSibling;
+    if (contentD.style.maxHeight){
+      contentD.style.maxHeight = null;
+    } else {
+      contentD.style.maxHeight = contentD.scrollHeight + "px";
+    } 
+  });
+}
