@@ -82,6 +82,10 @@
 		letter-spacing: -.03em;
 	}
 
+	.lh-text { line-height: 1.4; }
+	.lh-text-l { line-height: 1.4; }
+	.lh-text-m { line-height: 1.4; }
+	.lh-text-ns { line-height: 1.4; }
 
 	/* enlarge font upon hover */
 	@keyframes ldio-lt6rgcsawgm {
