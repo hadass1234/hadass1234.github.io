@@ -2,7 +2,7 @@ function resize(elem, percent) {
 	elem.style.fontSize = percent; }
 
 
-	// Filtering - Homepage
+	// Filtering - Homepage	
 	filterSelection("all")
 	function filterSelection(c) {
 	  var x, i;
