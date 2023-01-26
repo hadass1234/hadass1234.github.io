@@ -261,6 +261,8 @@
 			top: 1rem;
 			text-align: center;
 			align-items: center;
+			float: center;
+			margin: 0 1.15em;
 			width: 80%;
 			display: flex !important;
 			position: sticky;
