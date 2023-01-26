@@ -238,7 +238,7 @@
 		.top {
 			place-self:end;
 			position:sticky;
-			bottom:40px;
+			bottom:20px;
 			text-align: right;
 			margin-top:100vh;
 			
