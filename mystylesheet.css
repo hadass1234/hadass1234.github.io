@@ -240,8 +240,8 @@
 			position:sticky;
 			bottom:40px;
 			right: 40px;
-			margin-right:30px;
 			margin-top:100vh;
+			margin-top:85%;
 			
 			/* visual styling */
 			text-decoration: none;
