@@ -239,9 +239,8 @@
 			place-self:end;
 			position:sticky;
 			bottom:40px;
-			right: 40px;
 			margin-top:100vh;
-			margin-left:85%;
+			margin-left:90%;
 			
 			/* visual styling */
 			text-decoration: none;
