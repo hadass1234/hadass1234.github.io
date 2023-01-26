@@ -237,7 +237,9 @@
 		/* back to top floating button */
 		.top {
 			place-self:end;
+			display: block;
 			position:sticky;
+			position: relative;
 			float: right;
 			bottom:20px;
 			margin-right:20px;
