@@ -254,7 +254,7 @@
 		  /* sticky menu */
 		
 		  #main-nav {
-			top: 2rem;
+			top: 50px;
 			text-align: center;
 			position: sticky;
 			align-self: flex-end;
