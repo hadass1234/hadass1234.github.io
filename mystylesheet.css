@@ -257,12 +257,6 @@
 		  }
 
 
-		  /* Ease in */
-		  .easeinout {
-			transition-timing-function: ease-in-out;
-		  }
-
-
 		  /* Sticky menu */
 		  #navbarA {
 			overflow: hidden;
