@@ -257,4 +257,10 @@
 		  #myBtn:hover {
 			background-color: #555;
 		  }
+
+
+
+		  .easeinout {
+			transition-timing-function: ease-in-out;
+		  }
 		  
