@@ -261,7 +261,6 @@
 			top: 1rem;
 			text-align: center;
 			align-items: center;
-			float: center !important;
 			width: 80%;
 			display: flex !important;
 			position: sticky;
@@ -281,6 +280,8 @@
 		  #main-nav.sticky {
 			position: fixed;
 			top: 0;
+			float: center !important;
+			
 		  }
 		  
 		  .navbarOffsetMargin {
