@@ -84,19 +84,3 @@ function resize(elem, percent) {
     mybutton.style.display = "none";
   	}
 	}
-
-
-
-	// Nav sticky to top
-	window.onscroll = function() {myFunction()};
-
-	var navbar = document.getElementById("navbarA");
-	var sticky = navbar.offsetTop;
-
-	function myFunction() {
-  	if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  	} else {
-    navbar.classList.remove("sticky");
-  	}
-	}
