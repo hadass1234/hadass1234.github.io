@@ -257,6 +257,7 @@
 		  #navbar {
 			overflow: hidden;
 			background-color: #333;
+			position: sticky;
 		  }
 		  
 		  #navbar a {
@@ -285,6 +286,3 @@
 			width: 100%;
 		  }
 		  
-		  .sticky + .content {
-			padding-top: 60px;
-		  }
