@@ -70,15 +70,18 @@ function resize(elem, percent) {
 
 
 	// Sticky menu
-	window.onscroll = function() {myFunction()};
+	let timVine = document.getElementById("tim-vine");
+	let navbar = document.getElementById("main-nav");
 
-	var navbar = document.getElementById("navbar");
-	var sticky = navbar.offsetTop;
+	let navPos = navbar.getBoundingClientRect().top;
 
-	function myFunction() {
-  	if (window.pageYOffset >= sticky) {
-    	navbar.classList.add("sticky")
-  	} else {
-    	navbar.classList.remove("sticky");
-  		}
+	window.addEventListener("scroll", e => {
+	let scrollPos = window.scrollY;
+	if (scrollPos > navPos) {
+		navbar.classList.add('sticky');
+		header.classList.add('navbarOffsetMargin');
+	} else {
+		navbar.classList.remove('sticky');
+		header.classList.remove('navbarOffsetMargin');
 	}
+	});

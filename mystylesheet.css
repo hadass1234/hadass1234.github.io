@@ -254,35 +254,33 @@
 
 		  /* sticky menu */
 		
-		  #navbar {
-			overflow: hidden;
-			background-color: #333;
-			position: sticky;
-		  }
-		  
-		  #navbar a {
-			float: left;
-			display: block;
-			color: #f2f2f2;
+		  #main-nav {
+			background-color: #1e1e1e;
+			padding: 10px;
 			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-			font-size: 17px;
-		  }
-		  
-		  #navbar a:hover {
-			background-color: #ddd;
-			color: black;
-		  }
-		  
-		  #navbar a.active {
-			background-color: #04AA6D;
-			color: white;
-		  }
-		  
-		  .sticky {
-			position: fixed;
-			top: 40px;
 			width: 100%;
+			position: relative;
+			box-sizing: border-box;
+			height: 45px;
 		  }
+		  
+		  nav a {
+			color: white;
+			text-decoration: none;
+			margin: 0px 10px;
+		  }
+		  
+		  nav a:hover {
+			text-decoration: underline;
+		  }
+		  
+		  #main-nav.sticky {
+			position: fixed;
+			top: 0;
+		  }
+		  
+		  .navbarOffsetMargin {
+			padding-top: 45px;
+		  }
+		  
 		  
