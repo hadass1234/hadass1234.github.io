@@ -235,8 +235,6 @@
 		}
 
 
-
-
 		/* Sroll to top */
 		#myBtn {
 			display: none;
@@ -259,8 +257,41 @@
 		  }
 
 
-
+		  /* Ease in */
 		  .easeinout {
 			transition-timing-function: ease-in-out;
+		  }
+
+
+		  /* Sticky menu */
+		  #navbarA {
+			overflow: hidden;
+		  }
+		  
+		  #navbarA a {
+			float: left;
+			display: block;
+			text-align: center;
+		  }
+		  
+		  #navbarA a:hover {
+			background-color: #ddd;
+		  }
+		  
+		  #navbarA a.active {
+			background-color: black;
+			color: white
+		  }
+		  
+		  .sticky {
+			position: fixed;
+			position: center;
+			top: 40px;
+			left: 40px;
+			right: 40px;
+		  }
+		  
+		  .sticky + .content {
+			padding-top: 200px;
 		  }
 		  

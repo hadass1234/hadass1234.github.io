@@ -90,3 +90,19 @@ function resize(elem, percent) {
   	document.body.scrollTop = 0;
   	document.documentElement.scrollTop = 0;
 	}
+
+
+
+	// Nav sticky to top
+	window.onscroll = function() {myFunction()};
+
+	var navbar = document.getElementById("navbarA");
+	var sticky = navbar.offsetTop;
+
+	function myFunction() {
+  	if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  	} else {
+    navbar.classList.remove("sticky");
+  	}
+	}
