@@ -236,7 +236,7 @@
 
 
 		/* Sroll to top */
-		#myBtn {
+		#myBtnA {
 			display: none;
 			position: fixed;
 			bottom: 20px;
@@ -252,12 +252,12 @@
 			border-radius: 4px;
 		  }
 		  
-		  #myBtn:hover {
+		  #myBtnA:hover {
 			background-color: #555;
 		  }
 
 
-		  /* Sticky menu */
+		/* Sticky menu */
 		  #navbarA {
 			overflow: hidden;
 		  }
