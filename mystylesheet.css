@@ -215,7 +215,7 @@
 		  
 		  /* Change background color of buttons on hover */
 		  .tab button:hover {
-			background-color: #ddd;
+			background-color: rgba( 0, 0, 0, .3 );;
 		  }
 		  
 		  /* Create an active/current tablink class */
@@ -250,7 +250,7 @@
 		  }
 
 		.top:hover {
-			background-color: #1e1e1e;
+			background-color:rgba( 0, 0, 0, .3 );
 		}
 
 
