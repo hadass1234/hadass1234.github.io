@@ -257,13 +257,13 @@
 		
 		  #main-nav {
 			background-color: #1e1e1e;
-			padding: 10px;
+			padding: 10px; 
+			top: 1rem;
 			text-align: center;
 			width: 100%;
-			position: -webkit-sticky;
-			position: sticky;
-			box-sizing: border-box;
 			height: 45px;
+			position: sticky;
+			align-self: flex-end;
 		  }
 		  
 		  nav a {
