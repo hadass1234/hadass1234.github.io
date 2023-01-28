@@ -92,15 +92,4 @@ function resize(elem, percent) {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
   	}
-
-
-
-	// Copy to clipboard
-	  function copyToClipboard(element) {
-		var $temp = $("<input>");
-		$("body").append($temp);
-		$temp.val($(element).text()).select();
-		document.execCommand("copy");
-		$temp.remove();
-	  }
-	  
+	
