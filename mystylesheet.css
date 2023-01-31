@@ -235,7 +235,7 @@
 			display: block;
 		}
 
-		/* back to top floating button */
+		/* back to top floating button 
 		.top {
 			place-self:end;
 			position:sticky;
@@ -244,7 +244,7 @@
 			text-align: right;
 			margin-top:100vh;
 			
-			/* visual styling */
+			/* visual styling 
 			text-decoration: none;
 			white-space:nowrap;
 			vertical-align: baseline;
@@ -254,7 +254,31 @@
 		.top:hover {
 			background-color:rgba( 0, 0, 0, .3 );
 		}
+		*/
 
+
+		/* sticky menu */
+		.top {
+			place-self:end;
+			position:sticky;
+			position: fixed;
+			bottom:20px;
+			right:20px;
+			margin-right: 20px;
+			text-align: right;
+			margin-top:100vh;
+			
+			
+			text-decoration: none;
+			white-space:nowrap;
+			vertical-align: baseline;
+
+		  }
+
+		.top:hover {
+			background-color:rgba( 0, 0, 0, .3 );
+		}
+		
 
 		  /* sticky menu */
 		
