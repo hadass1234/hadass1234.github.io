@@ -144,6 +144,17 @@
 		.hover-bg-brown {
 		background-color: #964B00; }
 
+		.cts-black {
+		color: #111010; }
+		.bg-cts-black {
+		background-color: #111010; }
+		.hover-cts-black:hover {
+		background-color: #111010; }
+		.hover-cts-black {
+		background-color: #111010; }
+
+			
+
 		.dim-a { 
 			opacity: 1; transition: opacity .15s ease-in; }
 		.dim-a:hover, .dim-a:focus { 
