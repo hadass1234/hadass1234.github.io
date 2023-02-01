@@ -263,8 +263,8 @@
 			place-self:end;
 			position:sticky;
 			position: fixed;
-			bottom:40px;
-			right:40px;
+			bottom:50px;
+			right:20px;
 			text-align: right;
 			margin-top:100vh;
 			
