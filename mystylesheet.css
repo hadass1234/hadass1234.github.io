@@ -257,6 +257,7 @@
 		}
 
 
+		/* back to top floating button
 		.top {
 			place-self:end;
 			position:sticky;
@@ -275,9 +276,10 @@
 		.top:hover {
 			background-color:rgba( 0, 0, 0, .3 );
 		}
+		*/
 		
 
-		/* back to top floating button 
+		/* back to top floating button */
 
 		.top {
 			place-self:end;
@@ -298,7 +300,6 @@
 		.top:hover {
 			background-color:rgba( 0, 0, 0, .3 );
 		}
-		*/
 
 		  /* sticky menu */
 		
