@@ -125,44 +125,70 @@
 			    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
 			  }
 			}
-			.spinner-wrapper {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: #000000;
-		z-index: 999999;
-		}
+	
+	.spinner-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000000;
+	z-index: 999999;
+	}
 
-		.brown {
-		color: #964B00; }
-		.bg-brown {
-		background-color: #964B00; }
-		.hover-bg-brown:hover {
-		background-color: #964B00; }
-		.hover-bg-brown {
-		background-color: #964B00; }
 
-		.cts-black {
-		color: #111010; }
-		.bg-cts-black {
-		background-color: #111010; }
-		.hover-cts-black:hover {
-		background-color: #111010; }
-		.hover-cts-black {
-		background-color: #111010; }
+	/* colors */
 
-		.toshi-purple {
-		color: #6734BA; }
-		.bg-toshi-purple {
-		background-color: #6734BA; }
-		.hover-toshi-purple:hover {
-		background-color: #6734BA; }
-		.hover-toshi-purple {
-		background-color: #6734BA; }
+	.brown {
+	color: #964B00; }
+	.bg-brown {
+	background-color: #964B00; }
+	.hover-bg-brown:hover {
+	background-color: #964B00; }
+	.hover-bg-brown {
+	background-color: #964B00; }
 
-			
+
+	.cts-black {
+	color: #111010; }
+	.bg-cts-black {
+	background-color: #111010; }
+	.hover-cts-black:hover {
+	background-color: #111010; }
+	.hover-cts-black {
+	background-color: #111010; }
+
+
+	.toshi-purple {
+	color: #6734BA; }
+	.bg-toshi-purple {
+	background-color: #6734BA; }
+	.hover-toshi-purple:hover {
+	background-color: #6734BA; }
+	.hover-toshi-purple {
+	background-color: #6734BA; }
+
+
+	.spotify-purple {
+	color: #b49bc8; }
+	.bg-spotify-purple {
+	background-color: #b49bc8; }
+	.hover-spotify-purple:hover {
+	background-color: #b49bc8; }
+	.hover-spotify-purple {
+	background-color: #b49bc8; }
+
+		
+	.oww-blue {
+	color: #01b0ff; }
+	.bg-oww-blue {
+	background-color: #01b0ff; }
+	.hover-oww-blue:hover {
+	background-color: #01b0ff; }
+	.hover-oww-blue {
+	background-color: #01b0ff; }
+
+
 
 		.dim-a { 
 			opacity: 1; transition: opacity .15s ease-in; }
