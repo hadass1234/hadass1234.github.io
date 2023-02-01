@@ -157,14 +157,18 @@
 	background-color: #111010; }
 	.hover-cts-black {
 	background-color: #111010; }
+	.hover-bg-cts-black {
+		background-color: #111010; }
 
 	.cts-orange {
-		color: #E85033; }
-		.bg-cts-orange {
-		background-color: #E85033; }
-		.hover-cts-orange:hover {
-		background-color: #E85033; }
-		.hover-cts-orange {
+	color: #E85033; }
+	.bg-cts-orange {
+	background-color: #E85033; }
+	.hover-cts-orange:hover {
+	background-color: #E85033; }
+	.hover-cts-orange {
+	background-color: #E85033; }
+	.hover-bg-cts-orange {
 		background-color: #E85033; }
 
 
@@ -176,6 +180,8 @@
 	background-color: #6734BA; }
 	.hover-toshi-purple {
 	background-color: #6734BA; }
+	.hover-bg-toshi-purple {
+		background-color: #6734BA; }
 
 
 	.spotify-purple {
@@ -186,6 +192,8 @@
 	background-color: #b49bc8; }
 	.hover-spotify-purple {
 	background-color: #b49bc8; }
+	.hover-bg-spotify-purple {
+		background-color: #b49bc8; }
 
 		
 	.oww-blue {
@@ -196,6 +204,8 @@
 	background-color: #01b0ff; }
 	.hover-oww-blue {
 	background-color: #01b0ff; }
+	.hover-bg-oww-blue {
+		background-color: #01b0ff; }
 
 
 	.xyz-pink {
@@ -206,6 +216,8 @@
 	background-color: #FF00FF; }
 	.hover-xyz-pink {
 	background-color: #FF00FF; }
+	.hover-bg-xyz-pink {
+		background-color: #FF00FF; }
 
 
 
