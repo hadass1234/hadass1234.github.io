@@ -158,6 +158,15 @@
 	.hover-cts-black {
 	background-color: #111010; }
 
+	.cts-orange {
+		color: #E85033; }
+		.bg-cts-orange {
+		background-color: #E85033; }
+		.hover-cts-orange:hover {
+		background-color: #E85033; }
+		.hover-cts-orange {
+		background-color: #E85033; }
+
 
 	.toshi-purple {
 	color: #6734BA; }
@@ -188,6 +197,19 @@
 	.hover-oww-blue {
 	background-color: #01b0ff; }
 
+
+	.xyz-pink {
+	color: #FF00FF; }
+	.bg-xyz-pink {
+	background-color: #FF00FF; }
+	.hover-xyz-pink:hover {
+	background-color: #FF00FF; }
+	.hover-xyz-pink {
+	background-color: #FF00FF; }
+
+
+
+	
 
 
 		.dim-a { 
