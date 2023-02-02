@@ -189,6 +189,15 @@
 	.hover-bg-xyz-pink:hover { background-color: #FF00FF; }
 	.hover-bg-xyz-pink:focus { background-color: #FF00FF; }
 
+	.green-judaikit { color: #1e3829; }
+	.bg-green-judaikit { background-color: #1e3829; }
+	.hover-green-judaikit:hover { color: #1e3829; }
+	.hover-green-judaikit:focus { color: #1e3829; }
+	.hover-bg-green-judaikit:hover { background-color: #1e3829; }
+	.hover-bg-green-judaikit:focus { background-color: #1e3829; }
+
+	
+
 
 
 	
