@@ -145,7 +145,7 @@
 	.hover-bg-brown:hover { background-color: #964B00; }
 	.hover-bg-brown { background-color: #964B00; }
 
-
+	/* Cum to Sleep */
 	.cts-black { color: #111010; }
 	.bg-cts-black { background-color: #111010; }
 	.hover-cts-black:hover { color: #111010; }
@@ -153,6 +153,7 @@
 	.hover-bg-cts-black:hover { background-color: #111010; }
 	.hover-bg-cts-black:focus { background-color: #111010; }
 
+	/* Cum to Sleep */
 	.cts-orange { color: #E85033; }
 	.bg-cts-orange { background-color: #E85033; }
 	.hover-cts-orangee:hover { color: #E85033; }
@@ -160,6 +161,7 @@
 	.hover-bg-cts-orange:hover { background-color: #E85033; }
 	.hover-bg-cts-orange:focus { background-color: #E85033; }
 
+	/* toshi */
 	.toshi-purple { color: #6734BA; }
 	.bg-toshi-purple { background-color: #6734BA; }
 	.hover-toshi-purple:hover { color: #6734BA; }
@@ -167,6 +169,7 @@
 	.hover-bg-toshi-purple:hover { background-color: #6734BA; }
 	.hover-bg-toshi-purple:focus { background-color: #6734BA; }
 
+	/* spotify */
 	.spotify-purple { color: #b49bc8; }
 	.bg-spotify-purple { background-color: #b49bc8; }
 	.hover-spotify-purple:hover { color: #b49bc8; }
@@ -174,7 +177,7 @@
 	.hover-bg-spotify-purple:hover { background-color: #b49bc8; }
 	.hover-bg-spotify-purple:focus { background-color: #b49bc8; }
 
-	
+	/* oww */
 	.oww-blue { color: #01b0ff; }
 	.bg-oww-blue { background-color: #01b0ff; }
 	.hover-oww-blue:hover { color: #01b0ff; }
@@ -182,6 +185,7 @@
 	.hover-bg-oww-blue:hover { background-color: #01b0ff; }
 	.hover-bg-oww-blue:focus { background-color: #01b0ff; }
 
+	/* xyz */
 	.xyz-pink { color: #FF00FF; }
 	.bg-xyz-pink { background-color: #FF00FF; }
 	.hover-xyz-pink:hover { color: #FF00FF; }
@@ -189,6 +193,9 @@
 	.hover-bg-xyz-pink:hover { background-color: #FF00FF; }
 	.hover-bg-xyz-pink:focus { background-color: #FF00FF; }
 
+	/* Stephen black-20 */
+
+	/* Judaikit */
 	.green-judaikit { color: #1e3829; }
 	.bg-green-judaikit { background-color: #1e3829; }
 	.hover-green-judaikit:hover { color: #1e3829; }
@@ -196,6 +203,29 @@
 	.hover-bg-green-judaikit:hover { background-color: #1e3829; }
 	.hover-bg-green-judaikit:focus { background-color: #1e3829; }
 
+	/* BRLO */
+	.brlo-green { color: #009b77; }
+	.bg-brlo-green { background-color: #009b77; }
+	.hover-brlo-green:hover { color: #009b77; }
+	.hover-brlo-green:focus { color: #009b77; }
+	.hover-bg-brlo-green:hover { background-color: #009b77; }
+	.hover-bg-brlo-green:focus { background-color: #009b77; }
+
+	/* Susanne Jung */
+	.jung-yellow { color: #eadea5; }
+	.bg-jung-yellow { background-color: #eadea5; }
+	.hover-jung-yellow:hover { color: #eadea5; }
+	.hover-jung-yellow:focus { color: #eadea5; }
+	.hover-bg-jung-yellow:hover { background-color: #eadea5; }
+	.hover-bg-jung-yellow:focus { background-color: #eadea5; }
+
+	/* Filmgalerie Berlin*/
+	.filmgalerie-red { color: #DE2A21; }
+	.bg-filmgalerie-red { background-color: #DE2A21; }
+	.hover-filmgalerie-red:hover { color: #DE2A21; }
+	.hover-filmgalerie-red:focus { color: #DE2A21; }
+	.hover-bg-filmgalerie-red:hover { background-color: #DE2A21; }
+	.hover-bg-filmgalerie-red:focus { background-color: #DE2A21; }
 	
 
 
