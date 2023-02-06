@@ -112,7 +112,7 @@ button::-moz-focus-inner {
 [type=reset]:-moz-focusring,
 [type=submit]:-moz-focusring,
 button:-moz-focusring {
-    outline: 1px dotted ButtonText
+    outline: 1px dotted Button Text
 }
 
 fieldset {
@@ -5512,9 +5512,9 @@ code {
     }
 
     .v-btm-ns {
-        vertical-align: bottom
-    } !important;
-}
+        vertical-align: bottom !important;
+    } 
+
 
 @media screen and (min-width:30em) and (max-width:60em) {
     .aspect-ratio-m {
