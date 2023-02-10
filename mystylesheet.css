@@ -246,6 +246,16 @@
 	.hover-bg-txt-a:hover { background-color: #dbd4cc; }
 	.hover-bg-txt-a:focus { background-color: #dbd4cc; }
 
+	/* Paper 2 */
+	.txt-b { color: #f1efec; }
+	.bg-txt-b { background-color: #f1efec; }
+	.hover-txt-b:hover { color: #f1efec; }
+	.hover-txt-b:focus { color: #f1efec; }
+	.hover-bg-txt-b:hover { background-color: #f1efec; }
+	.hover-bg-txt-b:focus { background-color: #f1efec; }
+
+
+
 	
 
 
