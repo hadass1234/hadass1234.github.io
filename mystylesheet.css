@@ -83,6 +83,11 @@
 		padding-bottom: 3px;
 	}
 
+	.emoji {
+		width: 40px;
+		  padding-bottom: 3px;
+	  }
+
 	.tracked-tighter {
 		letter-spacing: -.03em;
 	}
