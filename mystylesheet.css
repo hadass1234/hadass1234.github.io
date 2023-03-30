@@ -235,12 +235,12 @@
 	.hover-bg-jung-yellow:focus { background-color: #eadea5; }
 
 	/* Susanne Jung */
-	.jung-gray { color: #313c52; }
-	.bg-jung-gray { background-color: #313c52; }
-	.hover-jung-gray:hover { color: #313c52; }
-	.hover-jung-gray:focus { color: #313c52; }
-	.hover-bg-jung-gray:hover { background-color: #313c52; }
-	.hover-bg-jung-gray:focus { background-color: #313c52; }
+	.jung-gray { color: #445370; }
+	.bg-jung-gray { background-color: #445370; }
+	.hover-jung-gray:hover { color: #445370; }
+	.hover-jung-gray:focus { color: #445370; }
+	.hover-bg-jung-gray:hover { background-color: #445370; }
+	.hover-bg-jung-gray:focus { background-color: #445370; }
 
 	/* Filmgalerie Berlin*/
 	.filmgalerie-red { color: #DE2A21; }
