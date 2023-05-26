@@ -249,6 +249,14 @@
 	.hover-filmgalerie-red:focus { color: #DE2A21; }
 	.hover-bg-filmgalerie-red:hover { background-color: #DE2A21; }
 	.hover-bg-filmgalerie-red:focus { background-color: #DE2A21; }
+
+	/* Klarna x Mymuesli */
+	.pink-klarna { color: #ffc0cb; }
+	.bg-pink-klarna { background-color: #ffc0cb; }
+	.hover-pink-klarna:hover { color: #ffc0cb; }
+	.hover-pink-klarna:focus { color: #ffc0cb; }
+	.hover-bg-pink-klarna:hover { background-color: #ffc0cb; }
+	.hover-bg-pink-klarna:focus { background-color: #ffc0cb; }
 	
 
 	/* Paper 1 */
