@@ -192,6 +192,14 @@
 	.hover-bg-spotify-purple:hover { background-color: #b49bc8; }
 	.hover-bg-spotify-purple:focus { background-color: #b49bc8; }
 
+	/* spotify */
+	.spotify-green { color: #1ED760; }
+	.bg-spotify-green { background-color: #1ED760; }
+	.hover-spotify-green:hover { color: #1ED760; }
+	.hover-spotify-green:focus { color: #1ED760; }
+	.hover-bg-spotify-green:hover { background-color: #1ED760; }
+	.hover-bg-spotify-green:focus { background-color: #1ED760; }
+
 	/* oww */
 	.oww-blue { color: #01b0ff; }
 	.bg-oww-blue { background-color: #01b0ff; }
