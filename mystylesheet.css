@@ -89,6 +89,11 @@
 	}
 
 	.iconB {
+		width: 18px;
+		  padding-bottom: 3px;
+	  }
+
+	.iconC {
 		width: 16px;
 		  padding-bottom: 3px;
 	  }
