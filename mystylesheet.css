@@ -79,9 +79,19 @@
 	}
 
 	.icon {
+		width: 20px;
+		  padding-bottom: 3px;
+	  }
+
+	.iconA {
 	  width: 20px;
 		padding-bottom: 3px;
 	}
+
+	.iconB {
+		width: 16px;
+		  padding-bottom: 3px;
+	  }
 
 	.emoji {
 		width: 34px;
