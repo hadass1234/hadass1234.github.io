@@ -466,4 +466,37 @@
 			padding-top: 45px;
 		  }
 		  
-		  
+	
+
+		/* burger */
+
+		.menu {
+			display: none;
+		}
+		
+		#burger:checked ~ .menu {
+			display: block;
+		}
+		
+		li a:hover, li a:target {
+			color: #4BC0A9;
+		}
+		
+		li a:hover span {
+			color: black;
+		}
+		
+		/*Accessibility*/
+		
+		.sr-only {
+			color: red;
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			border: 0;
+			overflow: hidden;
+			clip: rect(0,0,0,0);
+		}
+	
