@@ -486,6 +486,107 @@
 			color: black;
 		}
 		
+
+		/* Custom classes */
+		.mw9 {
+			max-width: 74rem;
+		}
+		
+		.shadow-6 {
+			box-shadow: 0 .3rem 1rem 0 rgba(0,0,0,0.25);
+		}
+		
+		.h6 {
+			height: 19rem;
+		}
+		
+		@media (min-width: 60em) {
+			.h6-l {
+			height: 19rem;
+			}
+			.bg-transparent-l {
+			background-color: transparent;
+			}
+		}
+		
+		@media (min-width: 80em) {
+			.ph5-xl {
+			padding-left: 3.5rem;
+			padding-right: 3.5rem;
+			}
+		}
+		
+		.text-shadow {
+			text-shadow: 0px 2px 0px #45535B;
+		}
+		
+		.text-shadow-1 {
+			text-shadow: 0 1px 1px 0 rgba(68,83,91,0.5);
+		}
+		.transparent {
+			color: transparent;
+		}
+		
+		.be-make {
+			margin-top: -30px;
+			position: absolute;
+		}
+		
+		.left-auto {
+			margin-left: auto;
+		}
+		
+		.pv2-plus {
+			padding-top: 0.75rem;
+			padding-bottom: 0.75rem;
+		}
+		
+		.w1-plus {
+			width: 1.5rem;
+		}
+		
+		.w4-plus {
+			width: 10rem;
+		}
+		
+		@media (min-width: 60em) {
+			.w4-plus-l {
+			width: 10rem;
+			}
+		}
+		
+		@media (min-width: 60em) and (max-width: 80em) {
+			.w-30-ml {
+			width: 33%
+			}
+		}
+		
+		@media (min-width: 48em) {
+			.w1-plus {
+			width: 1.5rem;
+			}
+			.w-45-ns {
+			width: 45%;
+			}
+		}
+		
+		.f-xl {
+			font-size: 4rem;
+		}
+		
+		.f-xxl {
+			font-size: 5.5rem;
+		}
+		
+		.mw-21 {
+			max-width: 21rem;
+		}
+		
+		.github-circle {
+			padding-left: .435rem;
+			padding-right: 0.125rem;
+		}
+		
 		/*Accessibility*/
 		
 		.sr-only {
