@@ -109,6 +109,10 @@
 		letter-spacing: -.03em;
 	}
 
+	.tracked-tightern {
+		letter-spacing: -.01em;
+	}
+
 	.lh-text { line-height: 1.35; }
 	.lh-text-l { line-height: 1.35; }
 	.lh-text-m { line-height: 1.35; }
