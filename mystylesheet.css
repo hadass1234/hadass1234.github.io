@@ -500,8 +500,8 @@
 		  
 		/* dot */
 		  .dot {
-			height: 3px;
-			width: 3px;
+			height: 8px;
+			width: 8px;
 			background-color: #ed3f1c;
 			border-radius: 50%;
 			display: inline-block;
