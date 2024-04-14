@@ -292,7 +292,7 @@
 	.bg-green-hubject { background-color: #1d91a2; }
 	.hover-green-hubject:hover { color: #1d91a2; }
 	.hover-green-hubject:focus { color: #1d91a2; }
-	.hover-bg-green-hubject:hover { background-color: #ffc0cb; }
+	.hover-bg-green-hubject:hover { background-color: #1d91a2; }
 	.hover-bg-green-hubject:focus { background-color: #1d91a2; }
 	
 
@@ -319,6 +319,14 @@
 	.braun-red { color: #bf1b1b; }
 	.braun-green { color: #736b1e; }
 	.braun-light { color: #d9d2c6; }
+
+	/* Braun-orange */
+	.braun-orange { color: #ed3f1c; }
+	.bg-braun-orange { background-color: #ed3f1c; }
+	.hover-braun-orange:hover { color: #ed3f1c; }
+	.hover-braun-orange:focus { color: #ed3f1c; }
+	.hover-bg-braun-orange:hover { background-color: #ed3f1c; }
+	.hover-bg-braun-orange:focus { background-color: #ed3f1c; }
 
 	
 
