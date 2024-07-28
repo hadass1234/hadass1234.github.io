@@ -45,6 +45,9 @@
 	.pl9-m { padding-left: 6rem; }
 	.pl9-ns { padding-left: 6rem; }
 
+	/* font size */
+	.f25 { font-size: 2rem; }
+
 	/* index nax area */
 	div.b { height: 200px;}
 	div.b2 { height: 100px;}
