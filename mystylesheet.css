@@ -103,7 +103,7 @@
 		  padding-bottom: 3px;
 	  }
 
-	.iconD {
+	.§iconD {
 	width: 48px;
 		padding-bottom: 3px;
 	}
@@ -125,6 +125,11 @@
 	.lh-text-l { line-height: 1.35; }
 	.lh-text-m { line-height: 1.35; }
 	.lh-text-ns { line-height: 1.35; }
+
+	.lh-material { line-height: 1.4; }
+	.lh-material-l { line-height: 1.4; }
+	.lh-material-m { line-height: 1.4; }
+	.lh-material-ns { line-height: 1.4; }
 
 	/* enlarge font upon hover */
 	@keyframes ldio-lt6rgcsawgm {
