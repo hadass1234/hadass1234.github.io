@@ -194,6 +194,7 @@
 	.hover-bg-brown:hover { background-color: #964B00; }
 	.hover-bg-brown { background-color: #964B00; }
 
+
 	/* Cum to Sleep */
 	.cts-black { color: #111010; }
 	.bg-cts-black { background-color: #111010; }
@@ -341,6 +342,21 @@
 	.hover-bg-braun-orange:hover { background-color: #ed3f1c; }
 	.hover-bg-braun-orange:focus { background-color: #ed3f1c; }
 
+	/* Braun-light-orange */
+	.braun-light-orange { color: #FBE6CE; }
+	.bg-braun-light-orange { background-color: #FBE6CE; }
+	.hover-braun-light-orange:hover { color: #FBE6CE; }
+	.hover-braun-light-orange:focus { color: #FBE6CE; }
+	.hover-bg-braun-light-orange:hover { background-color: #FBE6CE; }
+	.hover-bg-braun-light-orange:focus { background-color: #FBE6CE; }
+
+	/* Braun-light-green */
+	.braun-light-green { color: #E2E1D0; }
+	.bg-braun-light-green { background-color: #E2E1D0; }
+	.hover-braun-light-green:hover { color: #E2E1D0; }
+	.hover-braun-light-green:focus { color: #E2E1D0; }
+	.hover-bg-braun-light-green:hover { background-color: #E2E1D0; }
+	.hover-bg-braun-light-green:focus { background-color: #E2E1D0; }
 	
 
 
