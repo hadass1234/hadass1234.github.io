@@ -548,14 +548,15 @@
 		  @media screen and (min-width: 80em) { /* 1280px and up */
 			/* Your styles for XL breakpoint */
 			
+			.p7-xl {
+				padding: 7rem; /* This will override the base padding in XL screens */
+			  }
+			
 			.container-xl {
 			  padding: 2rem;
 			  width: 80%;
 			}
 		  
-			.text-xl {
-			  font-size: 2rem;
-			}
 		  
 			/* Add any other styles specific to XL screens */
 		  }
@@ -634,30 +635,36 @@
 			.ma-xl-6 { margin: var(--space-6); }
 			.ma-xl-7 { margin: var(--space-7); }
 
-			/* Font Sizes */
-			:root {
-				--font-1: .75rem;
-				--font-2: .875rem;
-				--font-3: 1rem;
-				--font-4: 1.25rem;
-				--font-5: 1.5rem;
-				--font-6: 2rem;
-				--font-7: 3rem;
-				--font-8: 4rem;
-				--font-9: 5rem;
-				--font-10: 8rem;
+		/* Extra Large Font Sizes for Screens Larger than 1280px */
+			@media screen and (min-width: 80em) {
+				.f1-xl {
+				font-size: 4rem !important;
+				}
+			
+				.f2-xl {
+				font-size: 3.25rem !important;
+				}
+			
+				.f3-xl {
+				font-size: 2.25rem !important;
+				}
+			
+				.f4-xl {
+				font-size: 1.75rem !important;
+				}
+			
+				.f5-xl {
+				font-size: 1.5rem !important;
+				}
+			
+				.f6-xl {
+				font-size: 1.25rem !important;
+				}
+			
+				.f7-xl {
+				font-size: 1rem !important;
+				}
 			}
-
-			.f-xl-1 { font-size: var(--font-1); }
-			.f-xl-2 { font-size: var(--font-2); }
-			.f-xl-3 { font-size: var(--font-3); }
-			.f-xl-4 { font-size: var(--font-4); }
-			.f-xl-5 { font-size: var(--font-5); }
-			.f-xl-6 { font-size: var(--font-6); }
-			.f-xl-7 { font-size: var(--font-7); }
-			.f-xl-8 { font-size: var(--font-8); }
-			.f-xl-9 { font-size: var(--font-9); }
-			.f-xl-10 { font-size: var(--font-10); }
 
 			/* Width */
 			:root {
