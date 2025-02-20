@@ -614,6 +614,16 @@
 			.pt-xl-7 { padding-top: var(--space-7); }
 			.pb-xl-7 { padding-bottom: var(--space-7); }
 
+			/* Horizontal padding */
+			.ph-xl-1 { padding-left: 1rem; padding-right: 1rem; }
+			.ph-xl-2 { padding-left: 2rem; padding-right: 2rem; }
+			.ph-xl-3 { padding-left: 3rem; padding-right: 3rem; }
+			.ph-xl-4 { padding-left: 4rem; padding-right: 4rem; }
+			.ph-xl-5 { padding-left: 5rem; padding-right: 5rem; }
+			.ph-xl-6 { padding-left: 6rem; padding-right: 6rem; }
+			.ph-xl-7 { padding-left: 7rem; padding-right: 7rem; }
+
+
 			/* Margins */
 			.ma-xl-0 { margin: var(--space-0); }
 			.ma-xl-1 { margin: var(--space-1); }
