@@ -545,7 +545,7 @@
 	
 
 		  /* XL breakpount - 1280px and up */
-		  @media screen and (min-width: 96em) { /* 1280px and up */
+		  @media screen and (min-width: 96em) { /* 1536px and up */
 			/* Your styles for XL breakpoint */
 			
 			.p7-xl {
