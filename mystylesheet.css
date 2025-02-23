@@ -544,8 +544,8 @@
 		  }
 	
 
-		  /* XL breakpount - 1536px and up */
-		  @media screen and (min-width:96em) {
+		  /* XL breakpount - 1280px and up */
+		  @media screen and (min-width:80em) {
 			.aspect-ratio-xl {
 				height: 0;
 				position: relative;
@@ -1801,6 +1801,16 @@
 			.ph7-xl {
 				padding-left: 16rem !important;
 				padding-right: 16rem !important;
+			}
+
+			.ph8-xl {
+				padding-left: 24rem !important;
+				padding-right: 24rem !important;
+			}
+
+			.ph9-xl {
+				padding-left: 32rem !important;
+				padding-right: 32rem !important;
 			}
 
 			.ma0-xl {
