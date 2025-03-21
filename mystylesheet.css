@@ -362,6 +362,23 @@
 
 
 	
+	/* Maximum width mw10 */
+	.mw10 {
+		max-width: 112rem !important;
+	}
+	.mw10-s {
+		max-width: 112rem !important;
+	}
+	.mw10-ns {
+		max-width: 112rem !important;
+	}
+	.mw10-m {
+		max-width: 112rem !important;
+	}
+	.mw10-l {
+		max-width: 112rem !important;
+	}
+	
 
 
 		.dim-a { 
@@ -1371,10 +1388,14 @@
 			.mw9-xl {
 				max-width: 96rem !important;
 			}
+
+			.mw10-xl {
+				max-width: 112rem !important;
+			}
 		
 			.mw-none-xl {
 				max-width: none !important;
-			}
+			} 
 		
 			.w1-xl {
 				width: 1rem !important;
