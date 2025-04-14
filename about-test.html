@@ -146,7 +146,7 @@
 					</div>
 				</div>-->
 			</div>
-    <div class="fl w-100 w-50-l pr5-l pr4-m pa0 ph2 mb2-m">
+    		<div class="fl w-100 w-50-l pr5-l pr4-m pa0 ph2 mb2-m">
 				<p class="dt dark-gray f2 fw4 mt0 mb3-l mb2 lh-title">
 				</p>
 			</div>
@@ -169,6 +169,9 @@
 			</div>
 			<!-- Content -->
 			<div class="fl db w-100 w-50-l pa2 pb0 pb2-l ph1">
+				<!-- Hidden checkbox to control toggle -->
+				<input type="checkbox" id="toggle" class="dn" />
+				
 				<!--1A-->
 				<div class="measure-wide pb2 mb4">
     				<p class="dark-gray f5 f4-l fw4 lh-text mb2 mt0">
@@ -179,7 +182,10 @@
 						I co-led UX/UI design for a new, complex financial services product focused on invoicing and payment collection, and led UX/UI design improvments for the data-driven eRoaming portal with 2000+ partners and over 1 million stations.
 					</p>
 				</div>
-				<!--2A-->
+
+				<!-- Content block to show/hide -->
+				<div class="toggle-content overflow-hidden">
+					<!--2A-->
 				<div class="measure-wide pb2 mb4">
     				<p class="dark-gray f5 f4-l fw4 lh-text mb2 mt0">
 						<span class="silver">2023</span><br>
@@ -239,30 +245,13 @@
 						Graduated with distinction, Final Grade: 1.0 (“Excellent”).
 					</p>
 				</div>
-
-				<div class="w-100 mw6 center">
-					<!-- Hidden checkbox to control toggle -->
-					<input type="checkbox" id="toggle" class="dn" />
-				
-					<!-- Content block to show/hide -->
-					<div class="toggle-content overflow-hidden">
-					  <div class="lh-copy">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in risus sed arcu gravida placerat.</p>
-					  </div>
-					  <div class="lh-copy">
-						<p>Curabitur dignissim lacus a justo tincidunt, sed vehicula magna ultrices. Duis ac mauris in eros viverra.</p>
-					  </div>
-					  <div class="lh-copy">
-						<p>Aliquam erat volutpat. Nunc hendrerit odio ut libero dictum, sit amet lacinia odio euismod.</p>
-					  </div>
-					</div>
-				
-					<!-- Toggle label for "Show more" and "Show less" -->
-					<label for="toggle" class="db link dim blue mt2 pointer">
-					  <span class="show-more">Show more</span>
-					  <span class="show-less">Show less</span>
-					</label>
-				  </div>
+				</div>
+			
+				<!-- Toggle label for "Show more" and "Show less" -->
+				<label for="toggle" class="db link dim blue mt2 pointer">
+					<span class="show-more">See more</span>
+					<span class="show-less">See less</span>
+				</label>
 			</div>
 		</div>
 		<!-- Experience -->
