@@ -357,8 +357,29 @@
 	.hover-bg-braun-light-green:hover { background-color: #E2E1D0; }
 	.hover-bg-braun-light-green:focus { background-color: #E2E1D0; }
 	
-
-
+	
+	/* Show more or less */
+	.toggle-content {
+		max-height: 3rem;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+	  }
+  
+	  input[type="checkbox"]:checked ~ .toggle-content {
+		max-height: 1000px;
+	  }
+  
+	  input[type="checkbox"]:checked ~ label .show-more {
+		display: none;
+	  }
+  
+	  input[type="checkbox"]:checked ~ label .show-less {
+		display: inline;
+	  }
+  
+	  .show-less {
+		display: none;
+	  }
 
 
 	
