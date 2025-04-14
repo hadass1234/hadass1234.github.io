@@ -361,7 +361,7 @@
 	/* Show more or less */
 	/* Initially show only the first content div */
 	.toggle-content {
-	max-height: 2.5rem; /* Limit visible height to the first div */
+	max-height: 5rem; /* Limit visible height to the first div */
 	overflow: hidden;
 	transition: max-height 0.3s ease;
 	}
