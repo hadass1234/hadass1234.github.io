@@ -368,7 +368,7 @@
 
 	/* Expand content when checkbox is checked */
 	input[type="checkbox"]:checked ~ .toggle-content {
-	max-height: 1000px; /* Allow all content to show */
+	max-height: 1500px; /* Allow all content to show */
 	}
 
 	/* Show/hide "Show more" and "Show less" text */
