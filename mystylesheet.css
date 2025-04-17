@@ -309,12 +309,12 @@
 	.hover-bg-green-hubject:focus { background-color: #1d91a2; }
 
 	/* Hubect FS */
-	.purple-hubject { color: #AB7BE2; }
-	.bg-purple-hubject { background-color: #AB7BE2; }
-	.hover-purple-hubject:hover { color: #AB7BE2; }
-	.hover-purple-hubject:focus { color: #AB7BE2; }
-	.hover-bg-purple-hubject:hover { background-color: #AB7BE2; }
-	.hover-bg-purple-hubject:focus { background-color: #AB7BE2; }
+	.purple-hubject { color: #8252BA; }
+	.bg-purple-hubject { background-color: #8252BA; }
+	.hover-purple-hubject:hover { color: #8252BA; }
+	.hover-purple-hubject:focus { color: #8252BA; }
+	.hover-bg-purple-hubject:hover { background-color: #8252BA; }
+	.hover-bg-purple-hubject:focus { background-color: #8252BA; }
 
 	/* Paper 1 */
 	.txt-a { color: #dbd4cc; }
