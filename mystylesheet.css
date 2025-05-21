@@ -367,6 +367,10 @@
 	/* Linkedin */
 	.blue-linkedin  { color: #1565c0; } 
 	.bg-blue-linkedin { background-color: #1565c0; }
+	.hover-blue-linkedin:hover { color: #1565c0; }
+	.hover-bblue-linkedin:focus { color: #1565c0; }
+	.hover-blue-linkedin:hover { background-color: #1565c0; }
+	.hover-blue-linkedin:focus { background-color: #1565c0; }
 
 
 	/* Show more or less */
