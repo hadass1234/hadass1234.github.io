@@ -364,6 +364,10 @@
 	.hover-bg-braun-light-green:hover { background-color: #E2E1D0; }
 	.hover-bg-braun-light-green:focus { background-color: #E2E1D0; }
 	
+	/* Linkedin */
+	.blue-linkedin  { color: #1565c0; } 
+	.bg-blue-linkedin { background-color: #1565c0; }
+
 
 	/* Show more or less */
 	/* Initially show only the first content div */
