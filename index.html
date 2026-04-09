@@ -4,7 +4,7 @@
 <head>
     <meta content="text/html; charset=utf-8" />
     <title>Hadass Sternberg</title>
-    <meta name="description" content="Hadass Sternberg design website">
+    <meta name="description" content="Hadass Sternberg — Digital Product Designer specializing in complex B2B SaaS products. 6+ years experience. Uses AI prompting in research, prototyping and design process.">
     <meta name="keywords"
         content="Hadass, Cynthia, Sternberg, design, graphic, designer, Berlin, communication design, HTML, CSS, JavaScript">
     <meta name="author" content="Hadass Sternberg">
@@ -31,21 +31,30 @@
 <meta name="p:domain_verify" content="89285d7602e86a49a446ab94bfbbb84b" />
 
 <body>
+     <!-- orbs animation -->
+    <div class="hs-orbs">
+        <div class="orb-base orb-1 home-orb-1"></div>
+        <div class="orb-base orb-2 home-orb-2"></div>
+        <div class="orb-base orb-3 home-orb-3"></div>
+    </div>
     <header class="fixed top-0 left-0 right-0 z-999 blur">
-        <div class="mw80 center w-100 pv4">
+        <div class="mw80 center w-100 pv3">
             <nav class="db center dt-m dt-l w-100 f3 fw4 ex6 ph3 ph5-l ph4-m">
                 <div class="db dtc-m dtc-l fl w-100 w-40-m w-25-l tc tl-m tl-l pl0 pl2-l pl2-m mb2 mv2 mv2-m">
-                    <a class="link dark-gray f4 fw4 dib pb2 tl mh0" href="/index" title="Home - Hadass Sternberg">Hadass
+                    <a class="link dark-gray f4 fw4 dib pb2 tl mh0 nav-hover" href="/index" title="Home - Hadass Sternberg">Hadass
                         Sternberg</a>
                 </div>
                 <div class="db dtc-m dtc-l fl w-100 w-60-m w-75-l tc tr-m tr-l pr0 pr2-l pr2-m mb2 mv2 mv2-m">
-                    <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2" href="/work" title="Work">Work</a>
+                    <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2 nav-hover" href="/work" title="Work">Work</a>
                     <!-- Blog
-                <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2" href="/blog" title="Blog">Blog</a>-->
-                    <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2" href="/about" title="About">About</a>
+                <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2 nav-hover" href="/blog" title="Blog">Blog</a>-->
+                    <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2 nav-hover" href="/about" title="About">About</a>
                     <a class="ib inline-flex v-mid mh0 pl2" target="_blank" title="Linkedin"
-                        href="https://www.linkedin.com/in/hadass-sternberg/">
-                        <img class="iconB" src="/img/linkedin-logo.png"></a>
+                        href="https://www.linkedin.com/in/hadass-sternberg/"
+                        onmouseenter="this.querySelector('img').src='/img/linkedin-hs-orange.png'"
+                        onmouseleave="this.querySelector('img').src='/img/linkedin-hs-dark-gray.png'">
+                        <img class="iconB" src="/img/linkedin-hs-dark-gray.png">
+                    </a>
                 </div>
             </nav>
         </div>
@@ -60,14 +69,18 @@
                 <!-- Header -->
                 <section class="cf pb4 pb5-m pb6-l ph2 ph5-m ph6-l pt5 pt4-l mw10 center">
                     <div class="fn w-100">
-                        <h1
-                            class=" f3 f2-m f2-l f2-xl dark-gray lh-title mt3 mb5 mr0 mr0-l mr3-m fw4 tracked-tightern cssanimation sequence fadeInBottom">
-                            I'm Hadass, a <span class="braun-orange">Digital Product Designer</span>
-                            focused on simplifying complex B2B systems into clear, user-friendly products.
-                            <!-- Company --><span class="silver">Currently shaping eCommerce experiences at <a
-                                    class="link f3 f2-m f2-l fw4 silver ex5" href="https://atolls.com/"
-                                    target="_blank"><i>Atolls</i></a>.</span><br>
-                            <a class="link dark-gray f5 f4-m f4-l ex5" href="/about">More about me →</a>
+                        <h1 class="f3 f2-m f2-l f2-xl dark-gray lh-title mt3 mb5 mr0 mr0-l mr3-m fw4 tracked-tightern hero-headline">
+                            I'm Hadass, a <span class="braun-orange">Digital Product Designer</span> simplifying complex B2B systems into clear, user-friendly products.
+                            <!-- Company --><br>
+                            <span class="silver mb4 hero-sub-anim">Currently shaping eCommerce experiences at <a class="link f3 f2-m f2-l fw4 silver ex5" href="https://atolls.com/" target="_blank"><i>Atolls</i></a>.</span>
+                            <br>
+                            <div class="flex flex-wrap hero-btns-anim pt4">
+                                <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib white bg-braun-orange"
+                                    onclick="navigator.clipboard.writeText('info@hadass-sternberg.com').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy email', 2000); })"
+                                    href="#">Copy email</a>
+                                <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib mid-gray bg-white"
+                                    href="/about">More about me</a>
+                            </div>
                         </h1>
                     </div>
                 </section>
@@ -86,7 +99,7 @@
                 <!--PRODUCT DESIGN-->
                 <div id="summary" class="tabcontentC">
                     <!-- FS invoices -->
-                    <div class="fl w-100 w-100-m w-100-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                    <div class="fl w-100 w-100-m w-100-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                         <a class="dt" href="/project-hubject-Invoice">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="Hubject preview" src="/img/invoice-10.jpg">
                         </a>
@@ -94,24 +107,17 @@
                             <a class="link dark-gray f4 f4-l f4-m ex6 tl mv0" href="/project-hubject-Invoice">Financial
                                 Services: End-to-end invoicing system</a>
                             <p class="dt dark-gray f7 fw4 mt2 lh-title">
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-braun-light-green ph3 pv2 mt1 mr1 dib gray lh-solid">NEW
-                                    PRODUCT</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UX</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UI</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">B2B</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">SAAS</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">FINANCE</a>
+                                <a class="f7 no-underline br-pill v-top bg-washed-green ph3 pv2 mt1 mr1 dib gray lh-solid">NEW PRODUCT</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UX</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UI</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">B2B</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">SAAS</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">FINANCE</a>
                             </p>
                         </div>
                     </div>
                     <!-- Hubject CPO -->
-                    <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                    <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                         <a class="dt" href="/project-hubject-cpo">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="Hubject preview" src="/img/cpo-27.jpg">
                         </a>
@@ -119,24 +125,17 @@
                             <a class="link dark-gray f4 f4-l f4-m ex6 tl mv0" href="/project-hubject-cpo">Hubject
                                 Charging: B2B Partner finder and profile page</a>
                             <p class="dt dark-gray f7 fw4 mt2 lh-title">
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-braun-light-green ph3 pv2 mt1 mr1 dib gray lh-solid">NEW
-                                    FEATURE</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UX</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UI</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">B2B</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">SAAS</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">MARKETPLACE</a>
+                                <a class="f7 no-underline br-pill v-top bg-washed-green ph3 pv2 mt1 mr1 dib gray lh-solid">NEW FEATURE</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UX</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UI</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">B2B</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">SAAS</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">MARKETPLACE</a>
                             </p>
                         </div>
                     </div>
                     <!-- Hubject Dashboard -->
-                    <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                    <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                         <a class="dt" href="">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="Hubject preview"
                                 src="/img/dasbhoard-103.jpg">
@@ -145,23 +144,17 @@
                             <a class="link dark-gray f4 f4-l f4-m ex6 tl mv0" href=""><span style="color:#1D91A2">Coming
                                     soon:</span> Hubject Charging: Welcome dashboards</a>
                             <p class="dt dark-gray f7 fw4 mt2 lh-title">
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-braun-light-green ph3 pv2 mt1 mr1 dib gray lh-solid">REDESIGN</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UX</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UI</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">B2B</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">SAAS</a>
-                                <a
-                                    class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">MARKETPLACE</a>
+                                <a class="f7 no-underline br-pill v-top bg-washed-yellow ph3 pv2 mt1 mr1 dib gray lh-solid">REDESIGN</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UX</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">UI</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">B2B</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">SAAS</a>
+                                <a class="f7 no-underline br-pill v-top bg-white ph3 pv2 mt1 mr1 dib gray lh-solid">MARKETPLACE</a>
                             </p>
                         </div>
                     </div>
                     <!-- toshi 
-                <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                     <a class="dt" href="/project-toshi">
                         <img class="db w-100 mw10 br3 br4-l br4-m" alt="toshi app preview" src="/img/toshi-135.jpg">
                     </a>
@@ -178,7 +171,7 @@
                     </div>
                 </div>-->
                     <!-- Susanne 
-                <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                     <a class="dt" href="/project-susannejung">
                         <img class="db w-100 mw10 br3 br4-l br4-m" alt="Susanne Jung website preview" src="/img/thumb-susanne-2.gif">
                     </a>
@@ -194,7 +187,7 @@
                     </div>
                 </div>-->
                     <!-- Cum to sleep 
-                <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                     <a class="dt" href="/project-cum-to-sleep" >
                         <video autoplay loop muted playsinline class="db w-100 mw10 br3 br4-l br4-m" width="fit-content" alt="Cum to Sleep app preview" block-size="fit-content" height="fit-content" name="Cum to Sleep" id="vid" autoplay="autoplay">
                             <source src="/img/thumb-cts-mac3.mp4" type="video/mp4">
@@ -214,7 +207,7 @@
                 </div>-->
 
                     <!-- Stephen Wilks 
-                <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                     <a class="dt" href="/project-stephenwilks" >
                         <img class="db w-100 mw10 br3 br4-l br4-m" alt="Stephen Wilks website preview" src="/img/thumb-sw5.gif">
                     </a>
@@ -230,7 +223,7 @@
                 </div>-->
 
                     <!-- Filmgalerie 
-            <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+            <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                 <a class="dt" href="/project-filmgalerie">
                     <img class="db w-100 mw10 br3 br4-l br4-m" alt="Filmgalerie preview" src="/img/thumb-filmgalerie-1.jpg">
                 </a>
@@ -253,7 +246,7 @@
                 <div id="case" class="tabcontentC" style="display: none;">
 
                     <!-- Spotify -->
-                    <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                    <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                         <a class="dt" href="/project-spotify">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="Spotify campaign preview"
                                 src="/img/thumb-spo3.gif">
@@ -270,7 +263,7 @@
                         </div>
                     </div>
                     <!-- OWW -->
-                    <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a ">
+                    <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a ">
                         <a class="dt" href="/project-oww">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="One Warm Winter x Highsnobiety preview"
                                 src="/img/thumb-oww.jpg">
@@ -288,7 +281,7 @@
                         </div>
                     </div>
                     <!-- xyz -->
-                    <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                    <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                         <a class="dt" href="/project-xyz">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="XYZ Poster preview"
                                 src="/img/thumb-xyz-3.jpg">
@@ -305,7 +298,7 @@
                         </div>
                     </div>
                     <!-- Judaikit -->
-                    <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                    <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                         <a class="dt" href="/project-judaikit">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="Judaikit preview"
                                 src="/img/thumb-judaikit-motion.gif"></a>
@@ -327,7 +320,7 @@
                         </div>
                     </div>
                     <!-- Klarna -->
-                    <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                    <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                         <a class="dt" href="/project-mymuesli">
                             <img class="db w-100 mw10 br3 br3 br4-l br4-m" alt="BRLO campaign preview"
                                 src="/img/thumb-mymuesli-4.jpg">
@@ -346,7 +339,7 @@
                         </div>
                     </div>
                     <!-- BRLO -->
-                    <div class="fl w-100 w-100-m w-50-l ph1 ph2-l ph2-m pa2 pb4 dim-a">
+                    <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
                         <a class="dt" href="/project-brlo">
                             <img class="db w-100 mw10 br3 br3 br4-l br4-m" alt="BRLO campaign preview"
                                 src="/img/thumb-brlo.jpg">
@@ -370,41 +363,41 @@
             <!-- CLIENTS LOGOS -->
             <section class="cf w-100 pb4 mt2 mt4-m mt5-l">
                 <div>
-                    <p class="dt dark-gray f4 fw4 mt0 mb3 mb4-l lh-title">Clients and companies I've worked with</p>
+                    <p class="dt dark-gray f4 fw4 mt0 mb3 mb4-l lh-title">Products and companies I've worked with</p>
                 </div>
                 <div class="ph3 ph4-m ph6-l">
                     <div class="fl w-30 w-20-ns ph1 ph2-l ph2-m pa2 ">
                         <div class="aspect-ratio aspect-ratio--6x4">
                             <a class="dt hover-bg-light-gray br3">
-                                <img class="db w-100" src="/img/1-logo-Hubject.png" alt="BRLO">
+                                <img class="db w-100" src="/img/10-logo-Atolls.png" alt="Atolls">
                             </a>
                         </div>
                     </div>
                     <div class="fl w-30 w-20-ns ph1 ph2-l ph2-m pa2 ">
                         <div class="aspect-ratio aspect-ratio--6x4">
                             <a class="dt hover-bg-light-gray br3">
-                                <img class="db w-100 " src="/img/2-logo-Spotify.png" alt="BRLO">
+                                <img class="db w-100" src="/img/13-logo-Coupons.png" alt="Coupons">
                             </a>
                         </div>
                     </div>
                     <div class="fl w-30 w-20-ns ph1 ph2-l ph2-m pa2 ">
                         <div class="aspect-ratio aspect-ratio--6x4">
                             <a class="dt hover-bg-light-gray br3">
-                                <img class="db w-100 " src="/img/3-logo-Klarna.png" alt="BRLO">
+                                <img class="db w-100" src="/img/11-logo-iGraal.png" alt="iGraal">
                             </a>
                         </div>
                     </div>
                     <div class="fl w-30 w-20-ns ph1 ph2-l ph2-m pa2 ">
                         <div class="aspect-ratio aspect-ratio--6x4">
                             <a class="dt hover-bg-light-gray br3">
-                                <img class="db w-100" src="/img/6-logo-DHL.png" alt="BRLO">
+                                <img class="db w-100" src="/img/1-logo-Hubject.png" alt="Hubject">
                             </a>
                         </div>
                     </div>
                     <div class="fl w-30 w-20-ns ph1 ph2-l ph2-m pa2 ">
                         <div class="aspect-ratio aspect-ratio--6x4">
                             <a class="dt hover-bg-light-gray br3">
-                                <img class="db w-100" src="/img/9-logo-Optimizely.png" alt="BRLO">
+                                <img class="db w-100" src="/img/9-logo-Optimizely.png" alt="Optimizely">
                             </a>
                         </div>
                     </div>
@@ -451,18 +444,16 @@
             <div class="cf">
                 <div class="fl w-100 mh0 br4 pt4 pa2">
                     <div class="br4 pa3 pa4-l pa4-m ">
-                        <p class="dt near-white f3 f2-l f2-m fw4 mv0 mb0 lh-text h2-l h3-m"
+                        <p class="dt near-white f4 f3-l f3-m fw4 mv0 mb0 lh-text h2-l h3-m"
                             style="text-decoration: none;">
                             Get in touch:</p><br>
                         <!-- Email link 
                         <a class="link dt near-white f3 f2-l f2-m fw4 mv0 ex5" href="mailto:info@hadass-sternberg.com" target="_blank">info@hadass-sternberg.com</a>.-->
-                        <a class="f5 dim-a link br-pill ph4 pv3 mb2 mr2 dib white bg-braun-orange" href="/about"
-                            title="About">More about me</a>
+                        <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib white bg-braun-orange" onclick="navigator.clipboard.writeText('info@hadass-sternberg.com').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy email', 2000); })" href="#">Copy email</a>
                         <!-- PDF <a class="f5 dim-a link br-pill ph4 pv3 mb2 mr2 dib dark-gray bg-light-gray" href="/img/Hadass_Sternberg_Product_Designer_2025.pdf" target="_blank">Download Resume</a>-->
-                        <a class="f5 dim-a link br-pill ph4 pv3 mb2 mr2 dib white bg-mid-gray"
-                            href="mailto:info@hadass-sternberg.com" target="_blank">Email me</a>
-                        <a class="f5 link dim-a br-pill ph4 pv3 mb2 mr2 dib white bg-mid-gray" target="_blank"
-                            title="Linkedin" href="https://www.linkedin.com/in/hadass-sternberg/">Linkedin</a>
+                        <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib mid-gray bg-white" href="/about">More about me</a>
+                        <a class="f5 link dim-a br-pill pv-2-5 ph-2-5 mb2 mr2 dib white bg-mid-gray" target="_blank"
+                            title="Linkedin" href="https://www.linkedin.com/in/hadass-sternberg/">LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -472,12 +463,32 @@
                 </div>
                 <div class="fl dtc w-90 pb0 tr tr-l tr-m lh-copy">
                     <a class="link moon-gray dib tr mh1 f5 fw4 dib pb0" style="text-decoration: none;"
-                        title="Copyright">© 2025 Designed and coded in HTML by me. All rights reserved.</a>
+                        title="Copyright">Designed + Coded + Prompted with 🤍 by Hadass<br>© 2026 all rights reserved</a>
                 </div>
             </nav>
         </div>
     </footer>
 
+<!-- Audio player -->
+<div class="audio-frame br4 ph3 pv3">
+    <button class="audio-btn" id="audioBtn" onclick="toggleAudio()">
+        <svg id="playIcon" width="11" height="13" viewBox="0 0 11 13" fill="white" style="margin-left:2px">
+            <polygon points="0,0 11,6.5 0,13"/>
+        </svg>
+        <svg id="pauseIcon" width="11" height="13" viewBox="0 0 11 13" fill="white" style="display:none">
+            <rect x="0" y="0" width="3.5" height="13" rx="1"/>
+            <rect x="7.5" y="0" width="3.5" height="13" rx="1"/>
+        </svg>
+    </button>
+    <div class="audio-info">
+        <span class="audio-label dark-gray">Prefer listening? Hit play</span>
+        <div class="audio-bar" id="audioBar">
+            <div class="audio-progress" id="audioProgress"></div>
+        </div>
+    </div>
+    <span class="audio-time" id="audioTime">0:00</span>
+    <audio id="audioPlayer" src="/audio/Jessa_2026-04.mp3"></audio>
+</div>
 </body>
 
 </html>
