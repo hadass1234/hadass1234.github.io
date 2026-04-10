@@ -2765,6 +2765,13 @@ html {
 			}
 		}
 
+.hero-headline {
+    opacity: 0;
+}
+.hero-headline.ready {
+    opacity: 1;
+}
+
 /* ── card scroll reveal ── */
 .card-reveal {
     opacity: 0;

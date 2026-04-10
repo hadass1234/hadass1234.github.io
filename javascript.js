@@ -138,6 +138,7 @@ function initWordReveal() {
     }
 
     Array.from(h1.childNodes).forEach(wrapWords);
+    h1.classList.add('ready');
 
     const allWords = h1.querySelectorAll('.word');
     const mainWords = Array.from(allWords).filter(w => !w.closest('.hero-sub-anim'));
@@ -212,11 +213,21 @@ function toggleAudio() {
 document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('audioPlayer');
     if (!audio) return;
-    audio.addEventListener('loadedmetadata', () => {
+
+    function showDuration() {
+        if (isNaN(audio.duration) || audio.duration === 0) return;
         const durMins = Math.floor(audio.duration / 60);
         const durSecs = Math.floor(audio.duration % 60).toString().padStart(2, '0');
         document.getElementById('audioTime').textContent = '0:00 / ' + durMins + ':' + durSecs;
-    });
+    }
+
+    if (audio.readyState >= 1) {
+        showDuration();
+    } else {
+        audio.addEventListener('loadedmetadata', showDuration);
+        audio.addEventListener('canplay', showDuration);
+        audio.addEventListener('durationchange', showDuration);
+    }
 });
 
 // card scroll reveal
