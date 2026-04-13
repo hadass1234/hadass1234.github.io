@@ -182,10 +182,22 @@ function toggleAudio() {
     if (!audio) return;
 
     if (audio.paused) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'audio_play', {
+                'event_category': 'engagement',
+                'event_label': 'homepage_audio_intro'
+            });
+        }
         audio.play();
         playIcon.style.display = 'none';
         pauseIcon.style.display = 'block';
     } else {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'audio_pause', {
+                'event_category': 'engagement',
+                'event_label': 'homepage_audio_intro'
+            });
+        }
         audio.pause();
         playIcon.style.display = 'block';
         pauseIcon.style.display = 'none';
@@ -202,6 +214,12 @@ function toggleAudio() {
     });
 
     audio.addEventListener('ended', () => {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'audio_completed', {
+                'event_category': 'engagement',
+                'event_label': 'homepage_audio_intro'
+            });
+        }
         playIcon.style.display = 'block';
         pauseIcon.style.display = 'none';
         document.getElementById('audioProgress').style.width = '0%';
