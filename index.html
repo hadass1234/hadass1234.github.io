@@ -45,12 +45,13 @@
                         Sternberg</a>
                 </div>
                 <div class="db dtc-m dtc-l fl w-100 w-60-m w-75-l tc tr-m tr-l pr0 pr2-l pr2-m mb2 mv2 mv2-m">
-                    <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2 nav-hover" href="/work" title="Work">Work</a>
+                    <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2 nav-hover" href="/work" title="Work" onclick="gtag('event', 'nav_click', {'event_category': 'navigation', 'event_label': 'work'})">Work</a>
                     <!-- Blog
                 <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2 nav-hover" href="/blog" title="Blog">Blog</a>-->
-                    <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2 nav-hover" href="/about" title="About">About</a>
+                    <a class="link ib dark-gray f5 f4-l f4-m fw4 pb2 ml1 mr2 nav-hover" href="/about" title="About" onclick="gtag('event', 'nav_click', {'event_category': 'navigation', 'event_label': 'about'})">About</a>
                     <a class="ib inline-flex v-mid mh0 pl2" target="_blank" title="Linkedin"
                         href="https://www.linkedin.com/in/hadass-sternberg/"
+                        onclick="gtag('event', 'nav_click', {'event_category': 'navigation', 'event_label': 'linkedin'})"
                         onmouseenter="this.querySelector('img').src='/img/linkedin-hs-orange.png'"
                         onmouseleave="this.querySelector('img').src='/img/linkedin-hs-dark-gray.png'">
                         <img class="iconB" src="/img/linkedin-hs-dark-gray.png">
@@ -76,9 +77,10 @@
                             <br>
                             <div class="flex flex-wrap hero-btns-anim pt4">
                                 <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib white bg-braun-orange"
-                                    onclick="navigator.clipboard.writeText('info@hadass-sternberg.com').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy email', 2000); })"
+                                    onclick="gtag('event', 'hero_click', {'event_category': 'engagement', 'event_label': 'copy_email'}); navigator.clipboard.writeText('info@hadass-sternberg.com').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy email', 2000); })"
                                     href="#">Copy email</a>
                                 <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib mid-gray bg-white"
+                                    onclick="gtag('event', 'hero_click', {'event_category': 'engagement', 'event_label': 'more_about_me'})"
                                     href="/about">More about me</a>
                             </div>
                         </h1>
@@ -100,7 +102,7 @@
                 <div id="summary" class="tabcontentC">
                     <!-- FS invoices -->
                     <div class="fl w-100 w-100-m w-100-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
-                        <a class="dt" href="/project-hubject-Invoice">
+                        <a class="dt" href="/project-hubject-Invoice" onclick="gtag('event', 'case_study_click', {'event_category': 'engagement', 'event_label': 'hubject_invoice'})">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="Hubject preview" src="/img/invoice-10.jpg">
                         </a>
                         <div class="pt2 pb2">
@@ -118,7 +120,7 @@
                     </div>
                     <!-- Hubject CPO -->
                     <div class="fl w-100 w-100-m w-50-l ph1 card-reveal ph2-l ph2-m pa2 pb4 dim-a">
-                        <a class="dt" href="/project-hubject-cpo">
+                        <a class="dt" href="/project-hubject-cpo" onclick="gtag('event', 'case_study_click', {'event_category': 'engagement', 'event_label': 'hubject_cpo'})">
                             <img class="db w-100 mw10 br3 br4-l br4-m" alt="Hubject preview" src="/img/cpo-27.jpg">
                         </a>
                         <div class="pt2 pb2">
@@ -449,11 +451,11 @@
                             Get in touch:</p><br>
                         <!-- Email link 
                         <a class="link dt near-white f3 f2-l f2-m fw4 mv0 ex5" href="mailto:info@hadass-sternberg.com" target="_blank">info@hadass-sternberg.com</a>.-->
-                        <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib white bg-braun-orange" onclick="navigator.clipboard.writeText('info@hadass-sternberg.com').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy email', 2000); })" href="#">Copy email</a>
+                        <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib white bg-braun-orange" onclick="gtag('event', 'footer_click', {'event_category': 'engagement', 'event_label': 'copy_email'}); navigator.clipboard.writeText('info@hadass-sternberg.com').then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = 'Copy email', 2000); })" href="#">Copy email</a>
                         <!-- PDF <a class="f5 dim-a link br-pill ph4 pv3 mb2 mr2 dib dark-gray bg-light-gray" href="/img/Hadass_Sternberg_Product_Designer_2025.pdf" target="_blank">Download Resume</a>-->
-                        <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib mid-gray bg-white" href="/about">More about me</a>
+                        <a class="f5 dim-a link br-pill pv-2-5 ph-2-5 mb2 mr2 dib mid-gray bg-white" onclick="gtag('event', 'footer_click', {'event_category': 'engagement', 'event_label': 'more_about_me'})" href="/about">More about me</a>
                         <a class="f5 link dim-a br-pill pv-2-5 ph-2-5 mb2 mr2 dib white bg-mid-gray" target="_blank"
-                            title="Linkedin" href="https://www.linkedin.com/in/hadass-sternberg/">LinkedIn</a>
+                            title="Linkedin" href="https://www.linkedin.com/in/hadass-sternberg/" onclick="gtag('event', 'footer_click', {'event_category': 'engagement', 'event_label': 'linkedin'})">LinkedIn</a>
                     </div>
                 </div>
             </div>

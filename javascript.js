@@ -248,6 +248,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// scroll depth tracking
+(function() {
+    const marks = [25, 50, 75, 90];
+    const reached = new Set();
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+
+        marks.forEach(mark => {
+            if (scrollPercent >= mark && !reached.has(mark)) {
+                reached.add(mark);
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'scroll_depth', {
+                        'event_category': 'engagement',
+                        'event_label': mark + '%'
+                    });
+                }
+            }
+        });
+    });
+})();
+
 // card scroll reveal
 const cards = document.querySelectorAll('.card-reveal');
 if (cards.length) {
