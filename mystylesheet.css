@@ -338,6 +338,35 @@ html {
 		filter: blur(40px);
 	}
 
+	/* ── atolls pmt page orb colors ── */
+	.pmt-orb-1 {
+		width: 700px; height: 580px;
+		top: -420px; left: calc(50% - 540px);
+		background: radial-gradient(ellipse,
+			rgb(55, 94, 169) 0%,
+			rgba(50, 82, 140, 0.529) 30%,
+			transparent 70%);
+		filter: blur(50px);
+	}
+	.pmt-orb-2 {
+		width: 700px; height: 580px;
+		top: -410px; left: calc(50% - 220px);
+		background: radial-gradient(ellipse,
+			rgba(255, 90, 0, 0.400) 0%,
+			rgba(255, 90, 0, 0.800	) 30%,
+			transparent 70%);
+		filter: blur(50px);
+	}
+	.pmt-orb-3 {
+		width: 500px; height: 400px;
+		top: -260px; left: calc(50% - 200px);
+		background: radial-gradient(ellipse,
+			rgba(244, 244, 244, 0.764) 10%,
+			rgba(244, 244, 244, 0.322) 100%,
+			transparent 70%);
+		filter: blur(40px);
+	}
+
 	/* ── about page orb colors ── */
 	.about-orb-1 {
 		width: 700px; height: 580px;
@@ -653,6 +682,15 @@ html {
 	.hover-purple-hubject:focus { color: #8252BA; }
 	.hover-bg-purple-hubject:hover { background-color: #8252BA; }
 	.hover-bg-purple-hubject:focus { background-color: #8252BA; }
+
+	/* iGraal */
+	.orange-igraal { color: #ff5a00; }
+	.bg-orange-igraal { background-color: #ff5a00; }
+	.hover-orange-igraal:hover { color: #ff5a00; }
+	.hover-orange-igraal:focus { color: #ff5a00; }
+	.hover-bg-orange-igraal:hover { background-color: #ff5a00; }
+	.hover-bg-orange-igraal:focus { background-color: #ff5a00; }
+
 
 	/* Paper 1 */
 	.txt-a { color: #dbd4cc; }
