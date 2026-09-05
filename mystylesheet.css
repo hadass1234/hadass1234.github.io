@@ -2836,3 +2836,35 @@ html {
 .nav-hover-icon:hover {
     background: #ED3F1C;
 }
+
+/* ── hover-term tooltip ── */
+.hover-term {
+    position: relative;
+    color: inherit;
+    text-decoration: underline dotted;
+    cursor: pointer;
+}
+.hover-term:visited {
+    color: inherit;
+}
+.hover-term .tooltip-box {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(20, 20, 24, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 13px;
+    width: 260px;
+    z-index: 100;
+}
+.hover-term:hover .tooltip-box {
+    display: block;
+}
