@@ -17,8 +17,8 @@ html {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
-/* PMT-only: wider than the homepage's 300px to give the speed control room */
-.audio-frame.audio-frame-wide { width: 330px; }
+/* PMT-only: hugs content (speed pill included) instead of a fixed width, floored at the homepage's 300px */
+.audio-frame.audio-frame-wide { width: fit-content; min-width: 300px; }
 .audio-btn {
     width: 30px; height: 30px; min-width: 30px; min-height: 30px;
     aspect-ratio: 1; border-radius: 50%; border: none; outline: none;
