@@ -227,6 +227,21 @@ function toggleAudio() {
     });
 }
 
+// audio player - playback speed
+const audioSpeeds = [0.5, 0.7, 1, 1.2, 1.5];
+function cycleAudioSpeed() {
+    const audio = document.getElementById('audioPlayer');
+    const speedBtn = document.getElementById('audioSpeed');
+    if (!audio || !speedBtn) return;
+
+    let index = audioSpeeds.indexOf(audio.playbackRate);
+    if (index === -1) index = audioSpeeds.indexOf(1);
+    index = (index + 1) % audioSpeeds.length;
+
+    audio.playbackRate = audioSpeeds[index];
+    speedBtn.textContent = audioSpeeds[index] + 'x';
+}
+
 // show audio duration on load
 document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('audioPlayer');

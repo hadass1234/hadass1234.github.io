@@ -12,12 +12,6 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=DM+Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet'>
-    <!-- PMT-page-only audio box overrides: scoped classes, does not touch mystylesheet.css or any other page -->
-    <style>
-        .audio-accent-orange .audio-btn { background: #ff5a00; }
-        .audio-accent-orange .audio-btn:hover { background: #ff5a00; }
-        .audio-accent-orange .audio-progress { background: #ff5a00; }
-    </style>
     </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH9C79Y97E"></script>
@@ -120,6 +114,7 @@
                 </div>
             </div>
             <span class="audio-time" id="audioTime">0:00 / 0:00</span>
+            <button class="audio-speed" id="audioSpeed" onclick="cycleAudioSpeed()">1x</button>
             <audio id="audioPlayer" src="/audio/Jessa_1_pmt.mp3"></audio>
         </div>
 

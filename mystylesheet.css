@@ -10,7 +10,7 @@ html {
     bottom: 1.5rem;
     right: 30px;
     z-index: 998;
-    width: 300px;
+    width: 340px;
     display: inline-flex; align-items: center; gap: 10px;
     background: rgba(224, 224, 224, 0.75); border-radius: 2px;
     padding: 10px 14px;
@@ -31,6 +31,18 @@ html {
 .audio-bar { height: 2px; background: #c8c8c8; border-radius: 2px; overflow: hidden; cursor: pointer; }
 .audio-progress { height: 100%; width: 0%; background: #ED3F1C; transition: width 0.1s linear; }
 .audio-time { font-size: 11px; color: #888; min-width: 28px; }
+.audio-speed {
+    font-size: 11px; color: #888;
+    background: none; border: 1px solid #c8c8c8; border-radius: 10px;
+    padding: 1px 6px;
+    font-family: inherit;
+    cursor: pointer; flex-shrink: 0;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.audio-speed:hover { color: #333; border-color: #999; }
+.audio-accent-orange .audio-btn { background: #ff5a00; }
+.audio-accent-orange .audio-btn:hover { background: #ff5a00; }
+.audio-accent-orange .audio-progress { background: #ff5a00; }
 
 .scroll-progress {
     position: fixed;
