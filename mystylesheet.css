@@ -18,6 +18,11 @@ html {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
+/* PMT-only: fixed width so the box doesn't visibly resize as the time counter's
+   character width changes during playback. 344px = measured worst case (338px:
+   play button 30 + info column 160 + widest time string "M:SS / M:SS" 51 + widest
+   speed label e.g. "1.2x" 35, plus gaps/padding) + 6px safety margin for font-metric variance. */
+.audio-frame.audio-frame-wide { width: 344px; }
 .audio-btn {
     width: 30px; height: 30px; min-width: 30px; min-height: 30px;
     aspect-ratio: 1; border-radius: 50%; border: none; outline: none;
