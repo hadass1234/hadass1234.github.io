@@ -31,11 +31,11 @@ html {
 .audio-frame.audio-frame-wide-cpo { width: 351px; }
 /* Invoice-only: calculated worst case is 350px (play button 30 + info column 172
    for "Financial Services - case summary" + widest time string "M:SS / M:SS" 51 +
-   widest speed label e.g. "1.2x" 35, plus gaps/padding). Set generously above that
-   floor (>=400px requested) since the label is this page's longest and closest to
-   the edge - paired with .audio-label's white-space: nowrap below so the label
-   can never wrap even under flex-shrink pressure, regardless of exact px math. */
-.audio-frame.audio-frame-wide-invoice { width: 410px; }
+   widest speed label e.g. "1.2x" 35, plus gaps/padding). 360px gives a 10px buffer
+   above that, similar in proportion to PMT/CPO's margins - the shared .audio-label
+   white-space: nowrap rule below is what actually guarantees the label can't wrap,
+   so this width no longer needs to be oversized as a safety net on its own. */
+.audio-frame.audio-frame-wide-invoice { width: 360px; }
 .audio-btn {
     width: 30px; height: 30px; min-width: 30px; min-height: 30px;
     aspect-ratio: 1; border-radius: 50%; border: none; outline: none;
