@@ -23,6 +23,12 @@ html {
    play button 30 + info column 160 + widest time string "M:SS / M:SS" 51 + widest
    speed label e.g. "1.2x" 35, plus gaps/padding) + 6px safety margin for font-metric variance. */
 .audio-frame.audio-frame-wide { width: 344px; }
+/* CPO-only: same fix as PMT, calculated for this page's own content. Worst case
+   339px = play button 30 + info column 167 (label "Hubject Charging - case summary"
+   exceeds the 160px floor, so it sets the column's width) + widest time string
+   "M:SS / M:SS" 51 (swept across the file's real ~31s duration -> "0:30") + widest
+   speed label e.g. "1.2x" 35, plus gaps/padding, + 6px safety margin for font-metric variance. */
+.audio-frame.audio-frame-wide-cpo { width: 351px; }
 .audio-btn {
     width: 30px; height: 30px; min-width: 30px; min-height: 30px;
     aspect-ratio: 1; border-radius: 50%; border: none; outline: none;
@@ -32,6 +38,8 @@ html {
     transition: background 0.25s ease;
 }
 .audio-btn:hover { background: #ED3F1C; }
+/* CPO-only: black play button instead of the shared dark gray */
+.audio-btn.audio-btn-black { background: #1a1a1a; }
 .audio-info { display: flex; flex-direction: column; gap: 4px; min-width: 160px; }
 .audio-label { font-size: 11px; }
 .audio-bar { height: 2px; background: #c8c8c8; border-radius: 2px; overflow: hidden; cursor: pointer; }
