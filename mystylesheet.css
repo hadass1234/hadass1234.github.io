@@ -18,7 +18,7 @@ html {
     -webkit-backdrop-filter: blur(10px);
 }
 /* PMT-only: wider than the homepage's 300px to give the speed control room */
-.audio-frame.audio-frame-wide { width: 320px; }
+.audio-frame.audio-frame-wide { width: 330px; }
 .audio-btn {
     width: 30px; height: 30px; min-width: 30px; min-height: 30px;
     aspect-ratio: 1; border-radius: 50%; border: none; outline: none;
