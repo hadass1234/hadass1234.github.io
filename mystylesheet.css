@@ -10,15 +10,14 @@ html {
     bottom: 1.5rem;
     right: 30px;
     z-index: 998;
-    width: 300px;
+    width: fit-content;
+    min-width: 300px;
     display: inline-flex; align-items: center; gap: 10px;
     background: rgba(224, 224, 224, 0.75);
     padding: 16px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
-/* PMT-only: hugs content (speed pill included) instead of a fixed width, floored at the homepage's 300px */
-.audio-frame.audio-frame-wide { width: fit-content; min-width: 300px; }
 .audio-btn {
     width: 30px; height: 30px; min-width: 30px; min-height: 30px;
     aspect-ratio: 1; border-radius: 50%; border: none; outline: none;
