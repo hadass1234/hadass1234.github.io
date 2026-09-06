@@ -280,6 +280,59 @@ function toggleAudioCpo() {
     });
 }
 
+// audio player - Invoice page
+function toggleAudioInvoice() {
+    const audio = document.getElementById('audioPlayerInvoice');
+    const playIcon = document.getElementById('playIconInvoice');
+    const pauseIcon = document.getElementById('pauseIconInvoice');
+    if (!audio) return;
+
+    if (audio.paused) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'audio_play', {
+                'event_category': 'engagement',
+                'event_label': 'homepage_audio_intro'
+            });
+        }
+        audio.play();
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+    } else {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'audio_pause', {
+                'event_category': 'engagement',
+                'event_label': 'homepage_audio_intro'
+            });
+        }
+        audio.pause();
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+    }
+
+    audio.addEventListener('timeupdate', () => {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        document.getElementById('audioProgressInvoice').style.width = progress + '%';
+        const mins = Math.floor(audio.currentTime / 60);
+        const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+        const durMins = Math.floor(audio.duration / 60);
+        const durSecs = Math.floor(audio.duration % 60).toString().padStart(2, '0');
+        document.getElementById('audioTimeInvoice').textContent = mins + ':' + secs + ' / ' + durMins + ':' + durSecs;
+    });
+
+    audio.addEventListener('ended', () => {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'audio_completed', {
+                'event_category': 'engagement',
+                'event_label': 'homepage_audio_intro'
+            });
+        }
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+        document.getElementById('audioProgressInvoice').style.width = '0%';
+        document.getElementById('audioTimeInvoice').textContent = '0:00';
+    });
+}
+
 // audio player - playback speed
 const audioSpeeds = [0.5, 0.7, 1, 1.2, 1.5];
 function cycleAudioSpeed() {
@@ -298,6 +351,19 @@ function cycleAudioSpeed() {
 function cycleAudioSpeedCpo() {
     const audio = document.getElementById('audioPlayerCpo');
     const speedBtn = document.getElementById('audioSpeedCpo');
+    if (!audio || !speedBtn) return;
+
+    let index = audioSpeeds.indexOf(audio.playbackRate);
+    if (index === -1) index = audioSpeeds.indexOf(1);
+    index = (index + 1) % audioSpeeds.length;
+
+    audio.playbackRate = audioSpeeds[index];
+    speedBtn.textContent = audioSpeeds[index] + 'x';
+}
+
+function cycleAudioSpeedInvoice() {
+    const audio = document.getElementById('audioPlayerInvoice');
+    const speedBtn = document.getElementById('audioSpeedInvoice');
     if (!audio || !speedBtn) return;
 
     let index = audioSpeeds.indexOf(audio.playbackRate);

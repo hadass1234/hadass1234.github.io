@@ -883,5 +883,26 @@
         </div>
     </footer>
 
+<!-- Audio player -->
+<div class="audio-frame audio-frame-wide-invoice br4 ph3 pv3">
+    <button class="audio-btn audio-btn-black" id="audioBtnInvoice" onclick="toggleAudioInvoice()">
+        <svg id="playIconInvoice" width="11" height="13" viewBox="0 0 11 13" fill="white" style="margin-left:2px">
+            <polygon points="0,0 11,6.5 0,13"/>
+        </svg>
+        <svg id="pauseIconInvoice" width="11" height="13" viewBox="0 0 11 13" fill="white" style="display:none">
+            <rect x="0" y="0" width="3.5" height="13" rx="1"/>
+            <rect x="7.5" y="0" width="3.5" height="13" rx="1"/>
+        </svg>
+    </button>
+    <div class="audio-info">
+        <span class="audio-label dark-gray">Financial Services - case summary</span>
+        <div class="audio-bar" id="audioBar">
+            <div class="audio-progress" id="audioProgressInvoice"></div>
+        </div>
+    </div>
+    <span class="audio-time" id="audioTimeInvoice">0:00</span>
+    <button class="audio-speed" id="audioSpeedInvoice" onclick="cycleAudioSpeedInvoice()">1x</button>
+    <audio id="audioPlayerInvoice" src="/audio/Jessa_1_invoice.mp3"></audio>
+</div>
 </body>
 </html>

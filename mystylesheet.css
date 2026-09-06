@@ -29,6 +29,13 @@ html {
    "M:SS / M:SS" 51 (swept across the file's real ~31s duration -> "0:30") + widest
    speed label e.g. "1.2x" 35, plus gaps/padding, + 6px safety margin for font-metric variance. */
 .audio-frame.audio-frame-wide-cpo { width: 351px; }
+/* Invoice-only: same fix, calculated for this page's own content. Worst case
+   350px = play button 30 + info column 172 (label "Financial Services - case
+   summary" exceeds the 160px floor, so it sets the column's width) + widest
+   time string "M:SS / M:SS" 51 (swept across the file's real ~30s duration ->
+   "0:30") + widest speed label e.g. "1.2x" 35, plus gaps/padding, + 6px safety
+   margin for font-metric variance. */
+.audio-frame.audio-frame-wide-invoice { width: 356px; }
 .audio-btn {
     width: 30px; height: 30px; min-width: 30px; min-height: 30px;
     aspect-ratio: 1; border-radius: 50%; border: none; outline: none;
