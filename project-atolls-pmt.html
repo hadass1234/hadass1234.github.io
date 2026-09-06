@@ -12,6 +12,13 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=DM+Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet'>
+    <!-- PMT-page-only audio box overrides: scoped classes, does not touch mystylesheet.css or any other page -->
+    <style>
+        .audio-frame-inline { position: static; margin: 0 0 2rem 0; }
+        .audio-accent-orange .audio-btn { background: #ff5a00; }
+        .audio-accent-orange .audio-btn:hover { background: #ff5a00; }
+        .audio-accent-orange .audio-progress { background: #ff5a00; }
+    </style>
     </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH9C79Y97E"></script>
@@ -95,6 +102,27 @@
                 </div>
             </div>
         </main>
+
+        <!-- Audio player (PMT case study summary) -->
+        <div class="audio-frame audio-frame-inline audio-accent-orange br4 ph3 pv3">
+            <button class="audio-btn" id="audioBtn" onclick="toggleAudio()">
+                <svg id="playIcon" width="11" height="13" viewBox="0 0 11 13" fill="white" style="margin-left:2px">
+                    <polygon points="0,0 11,6.5 0,13"/>
+                </svg>
+                <svg id="pauseIcon" width="11" height="13" viewBox="0 0 11 13" fill="white" style="display:none">
+                    <rect x="0" y="0" width="3.5" height="13" rx="1"/>
+                    <rect x="7.5" y="0" width="3.5" height="13" rx="1"/>
+                </svg>
+            </button>
+            <div class="audio-info">
+                <span class="audio-label dark-gray">PMT case study summary</span>
+                <div class="audio-bar" id="audioBar">
+                    <div class="audio-progress" id="audioProgress"></div>
+                </div>
+            </div>
+            <span class="audio-time" id="audioTime">0:00 / 0:00</span>
+            <audio id="audioPlayer" src="/audio/pmt-summary.mp3"></audio>
+        </div>
 
         <!--hero image-->
         <section class="ph2 pa1">
