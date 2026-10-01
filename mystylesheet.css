@@ -726,6 +726,14 @@ html {
 	.hover-bg-orange-igraal:hover { background-color: #ff5a00; }
 	.hover-bg-orange-igraal:focus { background-color: #ff5a00; }
 
+	/* iGraal */
+	.blue-shoop { color: #227dfd; }
+	.bg-blue-shoop { background-color: #227dfd; }
+	.hover-blue-shoop:hover { color: #227dfd; }
+	.hover-blue-shoop:focus { color: #227dfd; }
+	.hover-bg-blue-shoop:hover { background-color: #227dfd; }
+	.hover-bg-blue-shoop:focus { background-color: #227dfd; }
+
 
 	/* Paper 1 */
 	.txt-a { color: #dbd4cc; }
