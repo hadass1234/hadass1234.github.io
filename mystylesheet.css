@@ -378,8 +378,8 @@ html {
 		width: 700px; height: 580px;
 		top: -420px; left: calc(50% - 540px);
 		background: radial-gradient(ellipse,
-			rgb(113, 165, 115) 0%,
-			rgba(113, 165, 115, 0.529) 30%,
+			rgba(116, 236, 222, 0.64) 0%,
+			rgba(19, 95, 86, 0.493) 30%,
 			transparent 70%);
 		filter: blur(50px);
 	}
@@ -2923,4 +2923,10 @@ html {
     color: #999;
     font-family: inherit;
     padding: 1.5rem;
+}
+
+/* ── gray frame around inline videos ── */
+.video-frame-gray {
+    background: #e8e8e8;
+    border-radius: 8px;
 }
