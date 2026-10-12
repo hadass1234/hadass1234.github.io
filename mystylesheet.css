@@ -734,6 +734,14 @@ html {
 	.hover-bg-blue-shoop:hover { background-color: #227dfd; }
 	.hover-bg-blue-shoop:focus { background-color: #227dfd; }
 
+	/* PMT */
+	.blue-igraal { color: #3B63AB; }
+	.bg-blue-igraal { background-color: #3B63AB; }
+	.hover-blue-igraal:hover { color: #3B63AB; }
+	.hover-blue-igraal:focus { color: #3B63AB; }
+	.hover-bg-blue-igraal:hover { background-color: #3B63AB; }
+	.hover-bg-blue-igraal:focus { background-color: #3B63AB; }
+
 
 	/* Paper 1 */
 	.txt-a { color: #dbd4cc; }
