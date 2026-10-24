@@ -61,6 +61,21 @@ html {
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 .audio-speed:hover { color: #333; border-color: #999; }
+/* Mobile + tablet: the fixed player covered hero buttons, pills and the footer.
+   Below 60em it sits in the page flow instead of floating over content. */
+@media screen and (max-width: 60em) {
+    .audio-frame,
+    .audio-frame.audio-frame-wide,
+    .audio-frame.audio-frame-wide-cpo,
+    .audio-frame.audio-frame-wide-invoice {
+        position: static;
+        display: flex;
+        width: auto;
+        min-width: 0;
+        margin: 0 1rem 1.5rem;
+    }
+    .audio-info { min-width: 0; flex: 1; }
+}
 .audio-frame.audio-bg-orange {
     background:
         linear-gradient(rgba(255, 90, 0, 0.12), rgba(255, 90, 0, 0.12)),
