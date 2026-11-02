@@ -2973,3 +2973,16 @@ html {
     .img-cycle > img { animation: none; }
     .img-cycle > img:first-child { opacity: 1; }
 }
+
+/* ── interactive prototype frame (PMT case study) ── */
+/* Layout, colors, borders and spacing come from Tachyons classes in the markup. */
+/* Keeps the stage at the prototype's 1400x900 shape (Tachyons has no aspect-ratio class). */
+.pmt-proto-stage { aspect-ratio: 1400 / 900; }
+/* Fixed design size; the inline script scales it down from the top-left corner. */
+.pmt-proto-frame { width: 1400px; height: 900px; transform-origin: 0 0; }
+/* Tachyons has no gap class. */
+.pmt-proto-reset { gap: 0.5rem; }
+/* Keeps the icon at 16px inside the flex button. */
+.pmt-proto-reset-icon { flex: none; }
+/* Tachyons has no focus ring class. */
+.pmt-proto-reset:focus-visible { outline: 2px solid #8fb0ff; outline-offset: 2px; }

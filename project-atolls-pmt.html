@@ -148,7 +148,7 @@
             <div class="cf center pv0 pv1-l">
                 <div class="fl w-100 center">
                     <a class="dt">
-                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-1.jpg" alt="PMT promotional slot scheduling tool">
+                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-20.jpg" alt="PMT promotional slot scheduling tool">
                     </a>
                     <!--Caption-->
                     <div class="pt2 pb2">
@@ -220,7 +220,7 @@
             <div class="cf center pv0 pv1-l">
                 <div class="fl db w-50 w-50-m w-50-l pa0 pr1 pr2-l pr2-m">
                     <a class="dt">
-                        <img class="db w-100 br4" src="/img/pmt-2.jpg" alt="PMT scheduling view showing a slot being set for a retailer">
+                        <img class="db w-100 br4" src="/img/pmt-21.jpg" alt="PMT scheduling view showing a slot being set for a retailer">
                     </a>
                     <!--Caption-->
                     <div class="pt2 pb2">
@@ -268,7 +268,7 @@
             <div class="cf center pv0 pv1-l">
                 <div class="fl w-100 center">
                     <a class="dt">
-                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-6.jpg" alt="Original PMT view with randomized slot colors">
+                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-22.jpg" alt="Original PMT view with randomized slot colors">
                     </a>
                     <!--Caption-->
                     <div class="pt2 pb2">
@@ -380,10 +380,10 @@
         <section class="ph2 pa1">
             <div class="cf center pv0 pv1-l">
                 <div class="fl w-100 center">
-                    <div class="video-frame-gray pv5 ph6">
+                    <div class="video-frame-gray pa3 pa4-m pv5-l ph6-l">
                         <a class="dt">
                             <video autoplay loop muted playsinline class="db w-100 mw10 br2 br3-l br3-m" controls="false" style="pointer-events: none" width="fit-content" block-size="fit-content" height="fit-content" id="vid" autoplay="autoplay" name="filter video">
-                                <source src="/img/Screen Recording 3.mp4" type="video/mp4">
+                                <source src="/img/Screen Recording 9.mp4" type="video/mp4">
                             </video>
                         </a>
                     </div>
@@ -425,7 +425,7 @@
             <div class="cf center pv0 pv1-l">
                 <div class="fl w-100 center">
                     <a class="dt">
-                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-10.jpg" alt="PMT">
+                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-25.jpg" alt="PMT">
                     </a>
                     <!--Caption-->
                     <div class="pt2 pb2">
@@ -496,7 +496,7 @@
                     🚀 The solution
                 </p>
                 <p class="dt dark-gray f5 f5-m f4 fw4 pb4 mv2 lh-copy">
-                    <span class="orange-igraal"><b>A redesigned slot view with indicators that make every slot’s status and source clear at a glance.</b></span>
+                    <span class="orange-igraal">A redesigned slot view with indicators that make every slot’s status and source clear at a glance.</span>
                     <br>
                     A red dot flags invalid slots, an icon shows how each slot was created, and color separates paid slots (green) from unpaid fillers (gray).
                 </p>
@@ -523,24 +523,56 @@
             </div>
         </section>
 
-         <!--video-->
+         <!--interactive prototype-->
         <section class="ph2 pa1">
             <div class="cf center pv0 pv1-l">
                 <div class="fl w-100 center">
-                    <div class="video-frame-gray pv5 ph6">
-                        <a class="dt">
-                            <video autoplay loop muted playsinline class="db w-100 mw10 br2 br3-l br3-m" controls="false" style="pointer-events: none" width="fit-content" block-size="fit-content" height="fit-content" id="vid" autoplay="autoplay" name="filter video">
-                                <source src="/img/Screen Recording 6.mp4" type="video/mp4">
-                            </video>
-                        </a>
+                    <div class="bg-dark-gray br2 br3-l br3-m pa3 pa4-m pa5-l">
+                        <div class="pmt-proto-card">
+                            <div class="flex items-center justify-between pt1 pb3">
+                                <div class="pmt-proto-intro flex flex-column">
+                                    <span class="f5 fw4 near-white mr3"><span aria-hidden="true">🕹️</span> Try the prototype yourself</span>
+                                    <p class="pmt-proto-hint f6 moon-gray mb0 mt1 lh-copy dn db-l">Click the red dot, hover a slot icon, open a slot.</p>
+                                </div>
+                                <div class="dn db-l">
+                                    <button type="button" id="pmt-proto-reset" class="pmt-proto-reset inline-flex items-center br-pill bn bg-white hover-bg-light-gray near-black f5 fw4 ph3 pv2 pointer">
+                                        <svg class="pmt-proto-reset-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"></path><path d="M20 4v5h-5"></path><path d="M20 12a8 8 0 0 1-14 5.3L4 15"></path><path d="M4 20v-5h5"></path></svg>
+                                        <span>Restart prototype</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="pmt-proto-stage relative overflow-hidden bg-near-white br2 br3-l br3-m" id="pmt-proto-stage">
+                                <iframe id="pmt-proto-frame" class="pmt-proto-frame absolute top-0 left-0 bn" src="/prototype/pmt-calendar/index.html" title="Interactive prototype of the redesigned iGraal Admin calendar" loading="lazy"></iframe>
+                                <div class="pmt-proto-block absolute absolute--fill flex items-center justify-center ph3 bg-black-60 dn-l" role="note">
+                                    <p class="bg-white near-black br3 pa3 mv0 tc f5 lh-copy mw6"><span aria-hidden="true">🕹️</span> The interactive prototype is available on desktop. Open this page on a larger screen to try it.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--Caption -->
-                    <div class="pt2 pb2">
-                        <p class="link gray f6 ex6 tc mv0">The interactive prototype in Figma Make, tested with Ops colleagues</p>
+                    <div class="pt2 pb2 tc">
+                        <p class="link gray f6 ex6 tc mv0">Live prototype of the solution</p>
                     </div>
                 </div>
             </div>
         </section>
+        <script>
+        (function () {
+            var stage = document.getElementById('pmt-proto-stage');
+            var frame = document.getElementById('pmt-proto-frame');
+            var reset = document.getElementById('pmt-proto-reset');
+            if (!stage || !frame) return;
+            function fit() { frame.style.transform = 'scale(' + (stage.clientWidth / 1400) + ')'; }
+            fit();
+            window.addEventListener('resize', fit);
+            // Under 60em the overlay blocks the prototype, so keep keyboard and screen readers out too
+            var desktop = window.matchMedia('(min-width: 60em)');
+            function block() { frame.inert = !desktop.matches; }
+            block();
+            if (desktop.addEventListener) desktop.addEventListener('change', block); else desktop.addListener(block);
+            if (reset) reset.addEventListener('click', function () { frame.contentWindow.location.reload(); });
+        })();
+        </script>
         <!--text-->
         <section class="ph2 pa1 cf">
             <!--left-->
@@ -576,7 +608,7 @@
             <div class="cf center pv0 pv1-l">
                 <div class="fl w-100 center">
                     <a class="dt">
-                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-13.jpg" alt="PMT">
+                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-26.jpg" alt="PMT">
                     </a>
                     <!--Caption-->
                     <div class="pt2 pb2">
@@ -622,9 +654,9 @@
                 <div class="fl db w-50 w-50-m w-50-l pa0 pr1 pr2-l pr2-m">
                     <a class="dt">
                         <div class="img-cycle">
-                            <img class="db w-100 br4" src="/img/pmt-gif-4.jpg" alt="Hovering the cloud icon on a partner cell shows a Salesforce tooltip">
-                            <img class="db w-100 br4" src="/img/pmt-gif-5.jpg" alt="Hovering the person icon on a partner cell shows a Manual tooltip">
-                            <img class="db w-100 br4" src="/img/pmt-gif-6.jpg" alt="Hovering the shuffle icon on a partner cell shows an Autofill tooltip">
+                            <img class="db w-100 br4" src="/img/pmt-gif-7.jpg" alt="Hovering the cloud icon on a partner cell shows a Salesforce tooltip">
+                            <img class="db w-100 br4" src="/img/pmt-gif-8.jpg" alt="Hovering the person icon on a partner cell shows a Manual tooltip">
+                            <img class="db w-100 br4" src="/img/pmt-gif-9.jpg" alt="Hovering the shuffle icon on a partner cell shows an Autofill tooltip">
                         </div>
                     </a>
                     <!--Caption -->
@@ -634,7 +666,7 @@
                 </div>
                 <div class="fl w-50 w-50-m w-50-l center pl1 pl2-l pl2-m">
                     <a class="dt">
-                        <img class="db w-100 br4" src="/img/pmt-14.jpg" alt="PMT">
+                        <img class="db w-100 br4" src="/img/pmt-30.jpg" alt="PMT">
                     </a>
                     <!--Caption -->
                     <div class="pt2 pb2">
@@ -678,7 +710,7 @@
             <div class="cf center pv0 pv1-l">
                 <div class="fl w-100 center">
                     <a class="dt">
-                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-15.jpg" alt="PMT">
+                        <img class="db w-100 br2 br3-l br3-m" src="/img/pmt-31.jpg" alt="PMT">
                     </a>
                     <!--Caption-->
                     <div class="pt2 pb2">

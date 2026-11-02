@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Placements week view</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F6F9;font-family:'Inter',system-ui,sans-serif;color:#1B232E}
+button,input,select{font-family:inherit}
+button{cursor:pointer}
+.row{display:grid;grid-template-columns:260px repeat(7,minmax(0,1fr));align-items:center;min-height:32px;border-top:1px solid #E3E7ED;position:relative;z-index:1}
+.rowlabel{grid-column:1;padding:0 16px 0 40px;font-size:13px;font-weight:500;color:#3A4655;display:flex;align-items:center;gap:10px}
+.row.band{background:#F6F8FA;min-height:40px}
+.row:hover{z-index:3}
+.catbtn{display:flex;align-items:center;gap:8px;background:none;border:0;padding:0;font-size:13px;font-weight:600;color:#1B232E;height:40px;flex:1;min-width:0;text-align:left}
+.errdot{width:8px;height:8px;border-radius:50%;background:#C62828;flex:none;display:inline-block}
+.rowlabel .errdot{margin-left:auto}
+.dotbtn{margin:-9px -9px -9px auto;width:28px;height:28px;border:0;border-radius:50%;background:transparent;display:inline-flex;align-items:center;justify-content:center;padding:0;flex:none}
+.dotbtn:hover{background:#FBE1E1}
+.dotbtn .errdot{margin:0}
+.dotbtn:focus-visible{outline:2px solid #2457E6}
+.chip{display:flex;align-items:center;gap:8px;height:28px;margin:2px 2px 2px 3px;padding:0 8px;border:0;border-radius:3px;font-size:12px;font-weight:500;min-width:0;white-space:nowrap;box-sizing:border-box;width:calc(100% - 5px);text-align:left;justify-self:stretch}
+.chip:focus-visible,.empty:focus-visible{outline:2px solid #2457E6;outline-offset:2px}
+.chip span.n{overflow:hidden;text-overflow:ellipsis;min-width:0}
+.chip:hover{filter:brightness(.95)}
+.empty{display:flex;align-items:center;justify-content:center;height:28px;margin:2px 2px 2px 3px;padding:0;border:0;border-radius:3px;background:transparent;color:transparent;box-sizing:border-box;width:calc(100% - 5px);justify-self:stretch}
+.empty:hover{background:#EEF1F5;color:#2457E6}
+.paid{background:#DFF2E7;color:#0E4A2C}
+.filler{background:#ECEFF3;color:#45525F}
+.bad{background:#FBE1E1;color:#8A1C1C}
+.tip{position:relative;display:inline-flex;align-items:center;flex:none;padding:4px;margin:-4px;border-radius:4px}
+.tipbox{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%) translateY(4px);background:#2B3138;color:#fff;font-size:12px;font-weight:500;padding:6px 10px;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .12s ease,transform .12s ease;z-index:20;box-shadow:0 4px 12px rgba(10,15,25,.25)}
+.tip:hover .tipbox{opacity:1;transform:translateX(-50%) translateY(0)}
+.tip:hover{background:rgba(0,0,0,.07)}
+.ico{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lg{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#3A4655}
+.iconbtn{width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid #D5DBE3;border-radius:6px;color:#2B3440}
+.nav{width:64px;flex:none;background:#0F1B33;align-self:stretch;z-index:40;display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 0}
+.nav button{width:44px;height:44px;border:0;border-radius:6px;background:transparent;color:#A9B7D0;display:flex;align-items:center;justify-content:center}
+.dayh{padding:10px 4px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.dow{font-size:12px;font-weight:600;color:#4A5767;letter-spacing:.04em;text-transform:uppercase}
+.dnum{width:28px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#1B232E}
+.scrim{position:absolute;inset:0;border:0;padding:0;margin:0;background:rgba(19,24,32,.55);cursor:default}
+.lbl{display:block;font-size:13px;font-weight:600;color:#1B232E;margin-bottom:6px}
+.help{font-size:12px;color:#4A5767;margin-top:6px;line-height:1.4}
+.errmsg{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#8A1C1C;margin-top:6px}
+.field{box-sizing:border-box;width:100%;height:40px;padding:0 12px;border:1px solid #C9D0D9;border-radius:6px;background:#fff;font-size:14px;color:#1B232E}
+.field:disabled{background:#F2F4F7;color:#4A5767;border-color:#E3E7ED}
+.field.err{border-color:#C62828;box-shadow:0 0 0 1px #C62828;background:#FFF8F8}
+.field::placeholder{color:#5B6877}
+.ibtn{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:transparent;color:#3A4655}
+.dchip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:4px;background:#ECEFF3;color:#3A4655;font-size:12px;font-weight:600}
+</style>
+</helmet>
+<div style="display:flex;width:1400px;height:900px;position:relative;overflow:hidden;background:#F4F6F9">
+  <nav class="nav" aria-label="Main">
+    <button aria-label="Restart prototype" title="Restart prototype" onClick="{{restart}}" style="width:40px;height:40px;border-radius:6px;background:{{accent}};color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;border:0;padding:0;font-family:inherit">iG</button>
+    <button aria-label="Placements" style="background:#1F3158;color:#fff"><svg class="ico" style="width:20px;height:20px" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></button>
+    <button aria-label="Retailers"><svg class="ico" style="width:20px;height:20px" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9l1-5h14l1 5"></path><path d="M4 9v11h16V9"></path><path d="M9 20v-6h6v6"></path></svg></button>
+    <button aria-label="Reports"><svg class="ico" style="width:20px;height:20px" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></button>
+    <button aria-label="Settings"><svg class="ico" style="width:20px;height:20px" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"></path></svg></button>
+  </nav>
+
+  <div style="flex:1;min-width:0;min-height:0;display:flex;flex-direction:column">
+  <header style="flex:none;position:relative;z-index:30;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;min-height:72px;box-sizing:border-box;padding:12px 32px;background:#fff;border-bottom:1px solid #E3E7ED">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px">
+        <div role="group" aria-label="Website" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px"><button disabled="" style="width:52px;height:52px;border-radius:50%;border:1px solid #E3E7ED;background:#fff;font-size:12px;font-weight:600;color:#8B96A4;padding:0;margin-right:8px">POOL</button><button style="width:52px;height:52px;border-radius:50%;border:1px solid #D5DBE3;background:#fff;font-size:12px;font-weight:600;color:#3A4655;padding:0">AUR</button><button style="width:52px;height:52px;border-radius:50%;border:1px solid #D5DBE3;background:#fff;font-size:12px;font-weight:600;color:#3A4655;padding:0">BRK</button><button style="width:52px;height:52px;border-radius:50%;border:1px solid #D5DBE3;background:#fff;font-size:12px;font-weight:600;color:#3A4655;padding:0">COV</button><button aria-pressed="true" style="width:52px;height:52px;border-radius:50%;border:2px solid {{accent}};background:#fff;font-size:12px;font-weight:700;color:#1B232E;padding:0">DUN</button><button style="width:52px;height:52px;border-radius:50%;border:1px solid #D5DBE3;background:#fff;font-size:12px;font-weight:600;color:#3A4655;padding:0">ELM</button><button style="width:52px;height:52px;border-radius:50%;border:1px solid #D5DBE3;background:#fff;font-size:12px;font-weight:600;color:#3A4655;padding:0">FRN</button></div>
+        <div style="position:relative"><button aria-haspopup="listbox" aria-expanded="{{menuOpen}}" aria-label="Country" onClick="{{toggleMenu}}" style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 12px;border:1px solid #D5DBE3;border-radius:6px;background:#fff;font-size:13px;font-weight:500;color:#3A4655"><span aria-hidden="true" style="width:20px;height:14px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18);flex:none;background:{{flagBg}}"></span>{{countryName}}<svg class="ico" style="width:16px;height:16px;color:#6B7785" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><div role="listbox" aria-label="Country" style="position:absolute;top:calc(100% + 6px);left:0;min-width:230px;box-sizing:border-box;background:#fff;border:1px solid #E3E7ED;border-radius:6px;box-shadow:0 6px 16px rgba(10,15,25,.12);padding:6px;z-index:50"><sc-for list="{{countries}}" as="c" hint-placeholder-count="4"><button role="option" aria-selected="{{c.sel}}" onClick="{{c.pick}}" style="display:flex;align-items:center;gap:10px;width:100%;height:40px;padding:0 10px;border:0;border-radius:4px;background:{{c.bg}};font-size:13px;font-weight:500;color:#1B232E;text-align:left"><span aria-hidden="true" style="width:20px;height:14px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18);flex:none;background:{{c.flag}}"></span><span style="flex:1">{{c.name}}</span><sc-if value="{{c.sel}}" hint-placeholder-val="{{ false }}"><svg class="ico" style="width:16px;height:16px;color:#2457E6" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg></sc-if></button></sc-for></div></sc-if></div>
+      </div>
+      <button aria-label="Account, Hadass Sternberg" style="width:44px;height:44px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #C9D0D9;background:#DCE7FF;color:#1F44B8;font-size:14px;font-weight:700;padding:0">HS</button>
+  </header>
+
+  <main style="flex:1;min-width:0;min-height:0;overflow-y:auto;padding:28px 32px 40px">
+    <h1 style="margin:0 0 16px;font-size:20px;line-height:1.2;font-weight:600;letter-spacing:-.01em">Calendar</h1>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin:0 0 16px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:16px;font-weight:600;margin:0 8px;min-width:150px">{{rangeLabel}}</span><button class="iconbtn" onClick="{{prevWeek}}" aria-label="Previous week"><svg class="ico" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg></button>
+          <button onClick="{{goToday}}" style="height:40px;padding:0 16px;background:#fff;border:1px solid #D5DBE3;border-radius:6px;font-size:14px;font-weight:600;color:#1B232E">Today</button><button class="iconbtn" onClick="{{nextWeek}}" aria-label="Next week"><svg class="ico" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></button>
+        </div>
+      <button onClick="{{newSlot}}" style="height:40px;padding:0 18px;border:0;border-radius:6px;background:{{accent}};color:#fff;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px">
+        <svg class="ico" style="width:16px;height:16px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        New slot
+      </button>
+    </div>
+
+    <section style="background:#fff;border:1px solid #E3E7ED;border-radius:8px;overflow:hidden" aria-label="Weekly placements calendar">
+      <div style="overflow-x:auto">
+      <div style="min-width:980px;position:relative">
+
+        <div style="display:grid;grid-template-columns:260px repeat(7,minmax(0,1fr));background:#fff;position:relative;z-index:2">
+          <div style="grid-column:1;display:flex;align-items:flex-end;justify-content:space-between;gap:8px;padding:0 16px 10px;font-size:12px;font-weight:600;color:#4A5767;letter-spacing:.04em;text-transform:uppercase">
+            <span style="padding-bottom:8px">Placement</span>
+            <button onClick="{{toggleAll}}" style="display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid #D5DBE3;border-radius:4px;background:#fff;font-size:12px;font-weight:600;color:#1B232E;text-transform:none;letter-spacing:0">
+              <sc-if value="{{allOpen}}" hint-placeholder-val="{{ false }}"><svg class="ico" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 15 5-5 5 5M7 20l5-5 5 5M7 9l5-5 5 5" transform="translate(0 0)"></path></svg></sc-if>
+              <sc-if value="{{allClosed}}" hint-placeholder-val="{{ true }}"><svg class="ico" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 9 5 5 5-5M7 4l5 5 5-5M7 15l5 5 5-5"></path></svg></sc-if>
+              {{toggleAllLabel}}
+            </button>
+          </div>
+          <sc-for list="{{days}}" as="dy" hint-placeholder-count="7">
+            <div class="dayh" style="background:{{dy.bg}}"><span class="dow" style="color:{{dy.dowColor}}">{{dy.dow}}</span><span class="dnum" style="background:{{dy.numBg}};color:{{dy.numColor}}">{{dy.num}}</span></div>
+          </sc-for>
+        </div>
+
+        <div style="position:relative">
+          <div aria-hidden="true" style="position:absolute;top:0;bottom:0;left:260px;right:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));z-index:0;pointer-events:none">
+            <sc-for list="{{days}}" as="dy" hint-placeholder-count="7">
+              <div style="background:{{dy.colBg}};border-left:1px solid #E3E7ED"></div>
+            </sc-for>
+          </div>
+
+          <sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+            <div class="row {{r.rowCls}}" style="box-shadow:{{r.line}}">
+              <div class="rowlabel" style="padding-left:{{r.pad}}px">
+                <sc-if value="{{r.parent}}" hint-placeholder-val="{{ false }}">
+                  <button class="catbtn" aria-expanded="{{r.expanded}}" onClick="{{r.toggle}}">
+                    <sc-if value="{{r.expanded}}" hint-placeholder-val="{{ false }}"><svg class="ico" style="width:16px;height:16px" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></sc-if>
+                    <sc-if value="{{r.collapsed}}" hint-placeholder-val="{{ true }}"><svg class="ico" style="width:16px;height:16px" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></sc-if>
+                    <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{r.label}}</span>
+                  </button>
+                </sc-if>
+                <sc-if value="{{r.leaf}}" hint-placeholder-val="{{ true }}"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{r.label}}</span></sc-if>
+                <sc-if value="{{r.dotParent}}" hint-placeholder-val="{{ false }}"><button class="dotbtn" aria-label="{{r.dotAria}}" title="{{r.dotAria}}" onClick="{{r.dotAction}}"><span class="errdot"></span></button></sc-if>
+                <sc-if value="{{r.dotLeaf}}" hint-placeholder-val="{{ false }}"><span class="errdot" role="img" aria-label="Contains an invalid slot" title="Contains an invalid slot"></span></sc-if>
+              </div>
+              <sc-if value="{{r.leaf}}" hint-placeholder-val="{{ true }}">
+                <sc-for list="{{r.items}}" as="s" hint-placeholder-count="6">
+                  <sc-if value="{{s.empty}}" hint-placeholder-val="{{ false }}">
+                    <button class="empty" style="{{s.style}}" aria-label="{{s.aria}}" onClick="{{s.open}}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+                  </sc-if>
+                  <sc-if value="{{s.filled}}" hint-placeholder-val="{{ true }}">
+                    <button class="chip {{s.cls}}" style="{{s.style}}" aria-label="{{s.aria}}" onClick="{{s.open}}">
+                      <span class="tip">
+                        <sc-if value="{{s.isS}}" hint-placeholder-val="{{ false }}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4.5 4.5 0 0 1 .5 9.5H7z"></path></svg></sc-if>
+                        <sc-if value="{{s.isM}}" hint-placeholder-val="{{ false }}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg></sc-if>
+                        <sc-if value="{{s.isA}}" hint-placeholder-val="{{ false }}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"></path><path d="M20 4v5h-5"></path><path d="M20 12a8 8 0 0 1-14 5.3L4 15"></path><path d="M4 20v-5h5"></path></svg></sc-if>
+                        <span class="tipbox" role="tooltip">{{s.src}}</span>
+                      </span>
+                      <span class="n">{{s.name}}</span>
+                      <sc-if value="{{s.invalid}}" hint-placeholder-val="{{ false }}"><svg class="ico" style="margin-left:auto;width:16px;height:16px;color:#8A1C1C" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"></path><path d="M12 10v4M12 17.5v.01"></path></svg></sc-if>
+                    </button>
+                  </sc-if>
+                </sc-for>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+      </div>
+      </div>
+    </section>
+  </main>
+  </div>
+
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}"><button aria-label="Close country menu" tabindex="-1" onClick="{{closeMenu}}" style="position:absolute;inset:0;z-index:25;border:0;padding:0;background:transparent;cursor:default"></button></sc-if>
+
+  <sc-if value="{{dlg.open}}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;z-index:100">
+    <button class="scrim" aria-label="Close dialog" tabindex="-1" onClick="{{dlg.close}}"></button>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:32px 16px;box-sizing:border-box;pointer-events:none;z-index:1">
+    <div role="dialog" aria-modal="true" aria-labelledby="dlg-title" style="pointer-events:auto;position:relative;display:flex;flex-direction:column;max-height:100%;width:560px;max-width:100%;box-sizing:border-box;background:#fff;border-radius:8px;box-shadow:0 12px 32px rgba(10,15,25,.3)">
+
+      <div style="flex:none;display:flex;align-items:flex-start;justify-content:space-between;padding:20px 16px 4px 28px">
+        <div>
+          <div style="font-size:13px;font-weight:500;color:#4A5767">{{dlg.kicker}}</div>
+          <h2 id="dlg-title" style="margin:2px 0 10px;font-size:20px;line-height:1.2;font-weight:600;letter-spacing:-.01em">{{dlg.title}}</h2>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="dchip"><strong style="font-weight:700">DUN</strong><span aria-hidden="true" style="width:16px;height:11px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18);flex:none;background:{{flagBg}}"></span>{{countryName}}</span>
+            <span class="dchip"><sc-if value="{{dlg.srcS}}" hint-placeholder-val="{{ false }}"><svg class="ico" style="width:13px;height:13px" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4.5 4.5 0 0 1 .5 9.5H7z"></path></svg></sc-if><sc-if value="{{dlg.srcM}}" hint-placeholder-val="{{ true }}"><svg class="ico" style="width:13px;height:13px" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path></svg></sc-if><sc-if value="{{dlg.srcA}}" hint-placeholder-val="{{ false }}"><svg class="ico" style="width:13px;height:13px" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"></path><path d="M20 4v5h-5"></path><path d="M20 12a8 8 0 0 1-14 5.3L4 15"></path><path d="M4 20v-5h5"></path></svg></sc-if>{{dlg.by}}</span>
+            <sc-if value="{{dlg.isPaid}}" hint-placeholder-val="{{ false }}"><span class="dchip" style="background:#DFF2E7;color:#0E4A2C">Paid</span></sc-if>
+            <sc-if value="{{dlg.isFiller}}" hint-placeholder-val="{{ false }}"><span class="dchip">Unpaid</span></sc-if>
+          </div>
+        </div>
+        <div style="display:flex;gap:2px">
+          <button class="ibtn" aria-label="Close" onClick="{{dlg.close}}"><svg class="ico" style="width:20px;height:20px" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+        </div>
+      </div>
+
+      <div style="flex:1 1 auto;min-height:0;overflow-y:auto;padding:16px 28px 8px;display:flex;flex-direction:column;gap:20px">
+        <sc-if value="{{dlg.showBanner}}" hint-placeholder-val="{{ false }}">
+          <div role="alert" style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:6px;background:#FDECEC;border:1px solid #E8A9A9;color:#8A1C1C;font-size:13px;line-height:1.45;font-weight:500"><svg class="ico" style="width:18px;height:18px;color:#8A1C1C;margin-top:1px" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"></path><path d="M12 10v4M12 17.5v.01"></path></svg><span>{{dlg.bannerText}}</span></div>
+        </sc-if>
+
+        <sc-if value="{{dlg.isNew}}" hint-placeholder-val="{{ false }}">
+          <div>
+            <label class="lbl" for="placement">Placement</label>
+            <div style="position:relative">
+              <select id="placement" class="field" style="appearance:none;-webkit-appearance:none;padding-right:40px" value="{{dlg.placement}}" onChange="{{dlg.setPlacement}}">
+                <option value="">Select a placement</option>
+                <sc-for list="{{placementOptions}}" as="o" hint-placeholder-count="3"><option value="{{o.v}}">{{o.v}}</option></sc-for>
+              </select>
+              <svg class="ico" style="position:absolute;right:14px;top:12px;pointer-events:none;width:16px;height:16px" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </div>
+          </div>
+        </sc-if>
+
+        <div>
+          <label class="lbl" for="retailer">Retailer</label>
+          <div style="position:relative">
+            <select id="retailer" class="field" style="appearance:none;-webkit-appearance:none;padding-right:40px" value="{{dlg.retailer}}" onChange="{{dlg.setRetailer}}">
+              <option value="">Select a retailer</option>
+              <sc-for list="{{retailerOptions}}" as="o" hint-placeholder-count="3"><option value="{{o.v}}">{{o.v}}</option></sc-for>
+            </select>
+            <svg class="ico" style="position:absolute;right:14px;top:12px;pointer-events:none;width:16px;height:16px" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+          </div>
+        </div>
+
+        <div>
+          <div class="lbl">Starts</div>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:12px">
+            <div style="position:relative"><input class="field" disabled="{{dlg.locked}}" value="{{dlg.startDate}}" onChange="{{dlg.setStartDate}}" aria-label="Start date"><svg class="ico" style="position:absolute;right:14px;top:12px;width:16px;height:16px;color:#6B7785" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></div>
+            <input class="field" disabled="{{dlg.locked}}" value="{{dlg.startTime}}" onChange="{{dlg.setStartTime}}" aria-label="Start time">
+          </div>
+          <sc-if value="{{dlg.locked}}" hint-placeholder-val="{{ false }}"><div class="help">Locked, this slot has already started.</div></sc-if>
+        </div>
+
+        <div>
+          <div class="lbl">Ends</div>
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:12px">
+            <div style="position:relative"><input class="field" value="{{dlg.endDate}}" onChange="{{dlg.setEndDate}}" aria-label="End date"><svg class="ico" style="position:absolute;right:14px;top:12px;width:16px;height:16px;color:#3A4655" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></div>
+            <input class="field" value="{{dlg.endTime}}" onChange="{{dlg.setEndTime}}" aria-label="End time">
+          </div>
+        </div>
+
+        <div>
+          <div class="lbl">Image</div>
+          <sc-if value="{{dlg.hasImage}}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;align-items:center;gap:16px;padding:12px;border:1px solid #E3E7ED;border-radius:6px;background:#FAFBFC">
+              <svg width="160" height="60" viewBox="0 0 160 60" role="img" aria-label="Image preview" style="border-radius:4px;flex:none;display:block">
+                <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6D7A8"></stop><stop offset="1" stop-color="#F2B8A0"></stop></linearGradient></defs>
+                <rect width="160" height="60" fill="url(#sky)"></rect>
+                <rect y="44" width="160" height="16" fill="#8E7BB5"></rect>
+                <rect x="22" y="33" width="112" height="9" rx="4" fill="#fff"></rect>
+                <rect x="110" y="33" width="24" height="9" rx="4" fill="#C6403A"></rect>
+                <path d="M0 24 160 14" stroke="#4A5767" stroke-width="1"></path>
+              </svg>
+              <div style="min-width:0;flex:1">
+                <div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{dlg.imageName}}</div>
+                <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#0E4A2C;margin-top:4px"><svg class="ico" style="width:14px;height:14px" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"></path></svg>862 x 324 px, matches the required size</div>
+              </div>
+              <button onClick="{{dlg.chooseImage}}" style="height:40px;padding:0 14px;border:1px solid #C9D0D9;border-radius:4px;background:#fff;font-size:13px;font-weight:600;color:#1B232E">Replace</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{dlg.noImage}}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;gap:16px;padding:16px;border:1.5px dashed {{dlg.dropBorder}};border-radius:6px;background:{{dlg.dropBg}}">
+              <div style="width:160px;height:60px;border-radius:4px;background:#ECEFF3;display:flex;align-items:center;justify-content:center;color:#5B6877;flex:none"><svg class="ico" style="width:22px;height:22px" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="1.5"></circle><path d="m21 16-5-5-8 8"></path></svg></div>
+              <div style="min-width:0;flex:1">
+                <div style="font-size:13px;font-weight:600">No image yet</div>
+                <div style="font-size:12px;color:#4A5767;margin-top:4px">862 x 324 px, PNG or JPG</div>
+              </div>
+              <button onClick="{{dlg.chooseImage}}" style="height:40px;padding:0 14px;border:1px solid #C9D0D9;border-radius:4px;background:#fff;font-size:13px;font-weight:600;color:#1B232E">Choose image</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{dlg.errImage}}" hint-placeholder-val="{{ false }}"><div class="errmsg"><svg class="ico" style="width:14px;height:14px;color:#8A1C1C" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"></path><path d="M12 10v4M12 17.5v.01"></path></svg>Image is required</div></sc-if>
+        </div>
+
+        <div>
+          <label class="lbl" for="alt">Alt text</label>
+          <input id="alt" class="field {{dlg.altCls}}" placeholder="Describe the image" value="{{dlg.alt}}" onChange="{{dlg.setAlt}}">
+          <sc-if value="{{dlg.errAlt}}" hint-placeholder-val="{{ false }}"><div class="errmsg"><svg class="ico" style="width:14px;height:14px;color:#8A1C1C" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"></path><path d="M12 10v4M12 17.5v.01"></path></svg>Alt text is required</div></sc-if>
+          <sc-if value="{{dlg.altOk}}" hint-placeholder-val="{{ true }}"><div class="help">Describes the image for screen readers.</div></sc-if>
+        </div>
+
+        <div><label style="display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;min-height:44px"><input type="checkbox" checked="{{dlg.sponsored}}" onChange="{{dlg.setSponsored}}" style="width:20px;height:20px;margin:0;accent-color:#2457E6">Sponsored</label></div>
+      </div>
+
+      <div style="flex:none;display:flex;align-items:center;justify-content:space-between;padding:16px 28px 20px;border-top:1px solid #E3E7ED">
+        <sc-if value="{{dlg.isEdit}}" hint-placeholder-val="{{ true }}"><button onClick="{{dlg.close}}" style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border:1px solid #E8A9A9;border-radius:6px;background:#fff;font-size:14px;font-weight:600;color:#B42318"><svg class="ico" style="width:18px;height:18px" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg>Delete slot</button></sc-if>
+        <div style="display:flex;gap:10px;margin-left:auto">
+          <button onClick="{{dlg.close}}" style="height:40px;padding:0 20px;border:1px solid #C9D0D9;border-radius:6px;background:#fff;font-size:14px;font-weight:600;color:#1B232E">Discard</button>
+          <button disabled="{{dlg.saveDisabled}}" onClick="{{dlg.close}}" style="height:40px;padding:0 24px;border:0;border-radius:6px;background:{{dlg.saveBg}};color:#fff;font-size:14px;font-weight:600;cursor:{{dlg.saveCursor}}">Save</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#2457E6","options":["#2457E6","#0F766E","#6D3FD1","#C2410C"]},"$preview":{"width":1400,"height":900}}'>
+class Component extends DCLogic {
+constructor(...a) {
+  super(...a);
+  this.state = { open: {}, dlg: null, week: 0, country: 'US', menu: false };
+}
+patch(p) { this.setState({ dlg: Object.assign({}, this.state.dlg, p) }); }
+renderVals() {
+  const wk = this.state.week || 0;
+  const cc = this.state.country || 'US';
+  const us = cc === 'US';
+  const enc = (svg) => 'url(data:image/svg+xml,' + encodeURIComponent(svg) + ') center/cover no-repeat';
+  const V = (a, b, c) => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="1" height="2" fill="' + a + '"/><rect x="1" width="1" height="2" fill="' + b + '"/><rect x="2" width="1" height="2" fill="' + c + '"/></svg>';
+  const H = (a, b, c) => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="1" y="0" fill="' + a + '"/><rect width="3" height="1" y="0.67" fill="' + b + '"/><rect width="3" height="0.67" y="1.33" fill="' + c + '"/></svg>';
+  const FLAGS = {
+    US: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 14"><rect width="20" height="14" fill="#fff"/><path fill="#B22234" d="M0 0h20v2H0zM0 4h20v2H0zM0 8h20v2H0zM0 12h20v2H0z"/><rect width="9" height="8" fill="#3C3B6E"/><g fill="#fff"><circle cx="2" cy="1.8" r=".6"/><circle cx="4.5" cy="1.8" r=".6"/><circle cx="7" cy="1.8" r=".6"/><circle cx="3.2" cy="4" r=".6"/><circle cx="5.8" cy="4" r=".6"/><circle cx="2" cy="6.2" r=".6"/><circle cx="4.5" cy="6.2" r=".6"/><circle cx="7" cy="6.2" r=".6"/></g></svg>',
+    FR: V('#0055A4', '#FFFFFF', '#EF4135'),
+    IT: V('#009246', '#FFFFFF', '#CE2B37'),
+    DE: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="0.67" fill="#000"/><rect width="3" height="0.67" y="0.67" fill="#DD0000"/><rect width="3" height="0.67" y="1.33" fill="#FFCE00"/></svg>',
+    ES: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#AA151B"/><rect width="3" height="1" y="0.5" fill="#F1BF00"/></svg>',
+    GB: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"/><path d="M0 0 60 30M60 0 0 30" stroke="#fff" stroke-width="6"/><path d="M0 0 60 30M60 0 0 30" stroke="#C8102E" stroke-width="2"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>'
+  };
+  const COUNTRIES = [['US', 'United States'], ['GB', 'United Kingdom'], ['FR', 'France'], ['DE', 'Germany'], ['IT', 'Italy'], ['ES', 'Spain']];
+  const countryName = COUNTRIES.find((x) => x[0] === cc)[1];
+  const countries = COUNTRIES.map((x) => ({ name: x[1], flag: enc(FLAGS[x[0]]), sel: x[0] === cc, bg: x[0] === cc ? '#F0F5FF' : '#fff', pick: () => this.setState({ country: x[0], menu: false }) }));
+  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const DOW = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const dt = (off) => { const x = new Date(Date.UTC(2026, 10, 2 + 7 * wk + off)); return { d: x.getUTCDate(), m: MON[x.getUTCMonth()], y: x.getUTCFullYear() }; };
+  const dstr = (c) => { const o = dt(c - 2); return o.d + ' ' + o.m + ' ' + o.y; };
+  const SRC = { S: { label: 'Salesforce', by: 'Created by Salesforce' }, M: { label: 'Manual', by: 'Created manually' }, A: { label: 'Auto-fill', by: 'Filled automatically' } };
+  const RET = ['Amazon','Zalando','Nike','Booking.com','Lego','IKEA','Adidas','Puma','Fnac','Decathlon','Carrefour','H&M','Mango','Zara','ASOS','Nespresso','Trip.com','Blissim','Thalia','Lidl'];
+  const hash = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
+  // deterministic filler data for rows that have no hand-written slots
+  const gen = (key0) => {
+    const key = (wk === 0 && us) ? key0 : key0 + ' ' + cc + ' w' + wk;
+    const pE = wk > 0 ? Math.min(0.5 + 0.12 * wk, 0.9) : 0.45;
+    let h = hash(key);
+    // future weeks: some placements have nothing planned at all
+    if (wk > 0 && (hash(key + ' none') % 100) < Math.min(35 + 10 * wk, 80)) { const e = []; for (let c = 2; c <= 8; c++) e.push(['E', c, 1]); return e; }
+    const rnd = () => { h = (Math.imul(h, 1664525) + 1013904223) >>> 0; return h / 4294967296; };
+    const out = []; let c = 2;
+    while (c <= 8) {
+      if (rnd() < pE) { out.push(['E', c, 1]); c++; continue; }
+      const q = rnd();
+      const t = q < 0.3 ? 'A' : (q < 0.65 ? 'S' : 'M');
+      const name = RET[Math.floor(rnd() * RET.length)];
+      const sp = (rnd() < 0.15 && c < 8) ? 2 : 1;
+      out.push([t, name, c, sp]); c += sp;
+    }
+    return out;
+  };
+  // slot spec: [type, retailer, startDay, span]; type M manual, S salesforce, A auto-fill, I invalid (salesforce); ['E', startDay, span] is empty
+  const L = (label, slots, dot) => ({ label, slots, dot: !!dot });
+  const P = (label, children) => ({ label, children });
+  const MAIN = ['Automobile','Culture & Leisure','Electronics','Family & Kids','Fashion & Accessories','Health & Beauty','Travel'];
+  const SUB = ['Arts & Crafts','Books','Gambling','Movies & TV','Music','Tickets & Shows'];
+  const TREE = [
+    L('Sticky Banner', [['M','Amazon',2,1],['S','Zalando',3,1],['E',4,1],['S','Nike',5,2],['A','Decathlon',7,1],['E',8,1]]),
+    L('Cashback Boost', [['I','Lidl',2,1],['M','Lego',3,1],['S','ASOS',4,1],['A','Carrefour',5,1],['E',6,1],['M','Zara',7,1],['S','Mango',8,1]], true),
+    P('Stage Banner', [L('Hero 1'), L('Hero 2', [['M','Mango',2,1],['S','H&M',3,1],['I','Puma',4,1],['A','Carrefour',5,1],['S','Lego',6,1],['E',7,2]], true), L('Hero 3')]),
+    P('Promotion Grid', [L('Position 1'), L('Position 2')]),
+    P('Offer Cards (Logged out users)', [L('Card 1'), L('Card 2'), L('Card 3')]),
+    P('Offer Cards (Logged in users)', [L('Card 1'), L('Card 2')]),
+    P('Selection of the Day', [
+      L('Premium', [['S','Nespresso',2,1],['M','Zara',3,1],['E',4,1],['S','ASOS',5,1],['A','Carrefour',6,1],['E',7,2]]),
+      P('Classic', [L('Spot 1'), L('Spot 2'), L('Spot 3', [['E',2,1],['I','Blissim',3,1],['S','Thalia',4,1],['E',5,1],['M','Lego',6,1],['E',7,2]], true), L('Spot 4'), L('Spot 5')])
+    ]),
+    L('RLP Sidebar Card', [['E',2,1],['E',3,1],['S','Thalia',4,1],['M','Lidl',5,1],['S','Zalando',6,1],['E',7,2]]),
+    P('Campaign Highlight', [L('Spot 1'), L('Spot 2')]),
+    P('Main category placements', MAIN.map((n) => P(n, n === 'Fashion & Accessories' ? [P('Sponsored Merchant', [L('Merchant 1'), L('Merchant 2')]), L('Sidebar Card 1'), L('Sidebar Card 2')] : [L('Sidebar Card 1'), L('Sidebar Card 2')]))),
+    P('Sub-Category placements', SUB.map((n) => P(n, [L('Sidebar Card 1'), L('Sidebar Card 2')])))
+  ];
+  const slug = (n) => n.toLowerCase().replace(/[^a-z0-9]+/g, '');
+  const dayText = (c, sp) => { const a = dt(c - 2), b = dt(c + sp - 3); return a.d + ' ' + a.m + (sp > 1 ? ' to ' + b.d + ' ' + b.m : ''); };
+  const hasDot = (n) => wk === 0 && us && (n.children ? n.children.some(hasDot) : !!n.dot);
+  const openNew = (placement, date) => () => this.setState({ dlg: { mode: 'new', placement, retailer: '', startDate: date, startTime: '00:00', endDate: date, endTime: '23:59', locked: false, imageName: '', alt: '', sponsored: false } });
+
+  // past weeks and today never show an empty slot: fill them with auto-fill slots
+  const fillToday = (key, sl) => (sl[0] === 'E' && (wk < 0 || (wk === 0 && sl[1] === 2))) ? ['A', RET[hash('fill ' + key + ' ' + wk + ' ' + sl[1]) % RET.length], sl[1], sl[2]] : sl;
+  const item = (path, sl) => {
+    const group = path.slice(0, -1).join(' / ');
+    const row = path[path.length - 1];
+    const full = path.join(' / ');
+    if (sl[0] === 'E') {
+      return { empty: true, filled: false, style: 'grid-column:' + sl[1] + ' / span ' + sl[2], aria: 'Empty slot, ' + full + ', ' + dayText(sl[1], sl[2]) + '. Add slot', open: openNew(full, dstr(sl[1])) };
+    }
+    const inv = sl[0] === 'I' && wk === 0 && us;
+    const t = inv ? 'S' : sl[0];
+    const name = sl[1], c = sl[2], sp = sl[3];
+    return {
+      empty: false, filled: true,
+      style: 'grid-column:' + c + ' / span ' + sp,
+      cls: inv ? 'bad' : (t === 'A' ? 'filler' : 'paid'),
+      isS: t === 'S', isM: t === 'M', isA: t === 'A',
+      src: SRC[t].label, name, invalid: inv,
+      aria: name + ', ' + SRC[t].label + ', ' + dayText(c, sp) + (inv ? ', invalid, required fields missing' : ''),
+      open: () => this.setState({ dlg: { mode: inv ? 'invalid' : 'edit', group, row, src: t, retailer: name, startDate: dstr(c), startTime: '00:00', endDate: dstr(c + sp - 1), endTime: '23:59', locked: wk < 0 || (wk === 0 && c <= 2), imageName: inv ? '' : slug(name) + '_862x324.png', alt: inv ? '' : name, sponsored: false } })
+    };
+  };
+
+  const expandInvalid = (n, path) => {
+    const upd = {};
+    const rec = (node, p) => { if (node.children && hasDot(node)) { upd[p.join(' / ')] = true; node.children.forEach((ch) => rec(ch, p.concat(ch.label))); } };
+    rec(n, path);
+    this.setState({ open: Object.assign({}, this.state.open, upd) });
+  };
+  const allKeys = [];
+  const gather = (nodes, parent) => nodes.forEach((n) => { if (n.children) { const p = parent.concat(n.label); allKeys.push(p.join(' / ')); gather(n.children, p); } });
+  gather(TREE, []);
+  const allOpen = allKeys.every((k) => this.state.open[k]);
+  const toggleAll = () => this.setState({ open: allOpen ? {} : allKeys.reduce((o, k) => { o[k] = true; return o; }, {}) });
+  const rows = [];
+  const placementOptions = [];
+  const walk = (nodes, depth, parent) => {
+    nodes.forEach((n) => {
+      const path = parent.concat(n.label);
+      const key = path.join(' / ');
+      if (n.children) {
+        const expanded = !!this.state.open[key];
+        rows.push({ parent: true, leaf: false, label: n.label, expanded, collapsed: !expanded, dotParent: hasDot(n), dotLeaf: false, dotAria: 'Show invalid slots in ' + n.label, dotAction: () => expandInvalid(n, path), pad: 16 + depth * 22, rowCls: 'band', line: 'none', toggle: () => this.setState({ open: Object.assign({}, this.state.open, { [key]: !expanded }) }) });
+        if (expanded) walk(n.children, depth + 1, path);
+        else collectOnly(n.children, path);
+      } else {
+        placementOptions.push({ v: key });
+        const its = ((wk === 0 && us && n.slots) || gen(key)).map((sl) => item(path, fillToday(key, sl)));
+        rows.push({ parent: false, leaf: true, label: n.label, dotParent: false, dotLeaf: wk === 0 && us && !!n.dot, pad: 16 + depth * 22 + 24, rowCls: '', line: its.some((x) => x.filled) ? 'inset 3px 0 0 ' + (this.props.accent ?? '#2457E6') : 'none', items: its });
+      }
+    });
+  };
+  const collectOnly = (nodes, parent) => nodes.forEach((n) => { const path = parent.concat(n.label); if (n.children) collectOnly(n.children, path); else placementOptions.push({ v: path.join(' / ') }); });
+  walk(TREE, 0, []);
+  const retailerOptions = RET.map((v) => ({ v }));
+
+  const f = dt(0), l = dt(6);
+  const rangeLabel = f.y !== l.y ? f.d + ' ' + f.m + ' ' + f.y + ' - ' + l.d + ' ' + l.m + ' ' + l.y : (f.m === l.m ? f.d + ' - ' + l.d + ' ' + l.m + ' ' + l.y : f.d + ' ' + f.m + ' - ' + l.d + ' ' + l.m + ' ' + l.y);
+  const accentC = this.props.accent ?? '#2457E6';
+  const days = DOW.map((n, i) => { const td = wk === 0 && i === 0; return { dow: n, num: dt(i).d, today: td, bg: td ? '#F0F5FF' : 'transparent', colBg: td ? '#F0F5FF' : 'transparent', dowColor: td ? '#1F44B8' : '#4A5767', numBg: td ? accentC : 'transparent', numColor: td ? '#fff' : '#1B232E' }; });
+  const d = this.state.dlg;
+  let dlg = { open: false };
+  if (d) {
+    const isNew = d.mode === 'new', isInv = d.mode === 'invalid', isEdit = !isNew;
+    const missing = [];
+    if (isInv && !d.imageName) missing.push('image');
+    if (isInv && !d.alt) missing.push('alt text');
+    const errImage = isInv && !d.imageName;
+    const errAlt = isInv && !d.alt;
+    const saveDisabled = isNew ? !(d.retailer && d.placement) : missing.length > 0;
+    const t = d.src;
+    dlg = Object.assign({}, d, {
+      open: true, isNew, isInv, isEdit,
+      title: isNew ? 'New slot' : d.row + ' slot',
+      kicker: isNew ? 'Placements' : (d.group || 'Placements'),
+      by: isNew ? 'Manual, you' : (t ? SRC[t].by : ''),
+      srcS: !isNew && (t === 'S'), srcM: isNew || t === 'M', srcA: !isNew && t === 'A',
+      isPaid: isEdit && t !== 'A',
+      isFiller: isEdit && t === 'A',
+      hasImage: !!d.imageName, noImage: !d.imageName,
+      errImage, errAlt, altOk: !errAlt,
+      altCls: errAlt ? 'err' : '',
+      dropBorder: errImage ? '#C62828' : '#AEB8C4',
+      dropBg: errImage ? '#FFF8F8' : '#FAFBFC',
+      showBanner: isInv && missing.length > 0,
+      bannerText: 'Required fields are missing: ' + missing.join(' and ') + '. Fill them in to make this slot valid.',
+      saveDisabled,
+      saveBg: saveDisabled ? '#C5D2F3' : (this.props.accent ?? '#2457E6'),
+      saveCursor: saveDisabled ? 'not-allowed' : 'pointer',
+      close: () => this.setState({ dlg: null }),
+      setPlacement: (e) => this.patch({ placement: e.target.value }),
+      setRetailer: (e) => this.patch({ retailer: e.target.value }),
+      setStartDate: (e) => this.patch({ startDate: e.target.value }),
+      setStartTime: (e) => this.patch({ startTime: e.target.value }),
+      setEndDate: (e) => this.patch({ endDate: e.target.value }),
+      setEndTime: (e) => this.patch({ endTime: e.target.value }),
+      setAlt: (e) => this.patch({ alt: e.target.value }),
+      setSponsored: (e) => this.patch({ sponsored: e.target.checked }),
+      chooseImage: () => this.patch({ imageName: (d.retailer ? slug(d.retailer) : 'banner') + '_862x324.png' })
+    });
+  }
+
+  return { accent: this.props.accent ?? '#2457E6', allOpen, allClosed: !allOpen, toggleAll, toggleAllLabel: allOpen ? 'Collapse all' : 'Expand all', rows, placementOptions, retailerOptions, dlg, newSlot: openNew('', wk > 0 ? dstr(2) : '2 Nov 2026'), rangeLabel, days, restart: (e) => { try { const m = e.currentTarget.parentElement.parentElement.querySelector('main'); if (m) m.scrollTop = 0; } catch (x) {} this.setState({ open: {}, dlg: null, week: 0, country: 'US', menu: false }); }, countries, countryName, flagBg: enc(FLAGS[cc]), menuOpen: !!this.state.menu, toggleMenu: () => this.setState({ menu: !this.state.menu }), closeMenu: () => this.setState({ menu: false }), prevWeek: () => this.setState({ week: wk - 1 }), nextWeek: () => this.setState({ week: wk + 1 }), goToday: () => this.setState({ week: 0 }) };
+}
+}
+</script>
+</body>
+</html>
