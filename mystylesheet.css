@@ -393,8 +393,8 @@ html {
 		width: 700px; height: 580px;
 		top: -420px; left: calc(50% - 540px);
 		background: radial-gradient(ellipse,
-			rgba(116, 236, 222, 0.64) 0%,
-			rgba(19, 95, 86, 0.493) 30%,
+			rgba(147, 184, 253, 0.64) 0%,
+			rgba(59, 98, 171, 0.623) 30%,
 			transparent 70%);
 		filter: blur(50px);
 	}
